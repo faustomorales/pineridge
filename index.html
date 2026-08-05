@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greenhouse Church — Program Collateral</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/brand.css" />
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <style>
+      .wrap {
+        max-width: 60rem;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 4rem;
+      }
+      .top {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+      }
+      .top img {
+        width: 40px;
+        height: 40px;
+      }
+      .top span {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--color-primary-dark);
+      }
+      h1 {
+        font-size: 2rem;
+        color: var(--color-primary-dark);
+      }
+      .lede {
+        max-width: 42rem;
+        color: var(--color-muted);
+        margin-top: 0.75rem;
+        line-height: 1.5;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: 1.25rem;
+        margin-top: 2.5rem;
+      }
+      .card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .card h2 {
+        font-size: 1.15rem;
+        color: var(--color-primary-dark);
+      }
+      .card p {
+        color: var(--color-muted);
+        font-size: 0.92rem;
+        line-height: 1.4;
+        flex-grow: 1;
+      }
+      .tag {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--color-accent);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .note {
+        margin-top: 3rem;
+        padding: 1.25rem 1.5rem;
+        background: var(--color-primary-light);
+        border-radius: 10px;
+        color: var(--color-primary-dark);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      .note code {
+        background: rgba(0, 0, 0, 0.06);
+        padding: 0.1rem 0.35rem;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="top">
+        <img src="/src/assets/logo-placeholder.svg" alt="" />
+        <span>GREENHOUSE CHURCH</span>
+      </div>
+      <h1>Program Collateral</h1>
+      <p class="lede">
+        Handout, yard signs, and van magnet for Tutoring, Kids Church, and
+        Greenhouse Youth. Open any piece below, then use your browser's
+        Print / Save as PDF to produce a print-ready file at the correct
+        physical size.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <span class="tag">Handout · 8.5&Prime;×11&Prime;</span>
+          <h2>Programs Handout</h2>
+          <p>One-page flyer synthesizing all three programs — schedule, location, and contact info.</p>
+          <a class="btn" href="/handout.html">Open</a>
+        </div>
+        <div class="card">
+          <span class="tag">Yard sign · 24&Prime;×18&Prime;</span>
+          <h2>Tutoring</h2>
+          <p>Homework help and coaching for reading and math. K–5, weekdays 6:00–7:45 PM.</p>
+          <a class="btn" href="/signs/tutoring.html">Open</a>
+        </div>
+        <div class="card">
+          <span class="tag">Yard sign · 24&Prime;×18&Prime;</span>
+          <h2>Kids Church</h2>
+          <p>Prayer, teaching, and play at Pineridge Park. K–5, 5:00–6:00 PM.</p>
+          <a class="btn" href="/signs/kids-church.html">Open</a>
+        </div>
+        <div class="card">
+          <span class="tag">Yard sign · 24&Prime;×18&Prime;</span>
+          <h2>Greenhouse Youth</h2>
+          <p>Worship, prayer, and community. Grades 6–12, 6:00–9:00 PM.</p>
+          <a class="btn" href="/signs/greenhouse-youth.html">Open</a>
+        </div>
+        <div class="card">
+          <span class="tag">Van magnet · 18&Prime;×12&Prime;</span>
+          <h2>Van Magnet</h2>
+          <p>General church branding for the transportation van serving these programs.</p>
+          <a class="btn" href="/van-magnet.html">Open</a>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Branding note:</strong> colors, fonts, and logo on this site
+        are placeholders, not the real Greenhouse Church identity from
+        Taproot. See <code>BRANDING.md</code> in the repo for the task to
+        apply the real brand once you have unrestricted network access.
+      </div>
+    </div>
+  </body>
+</html>

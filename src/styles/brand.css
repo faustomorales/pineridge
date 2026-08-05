@@ -1,0 +1,19 @@
+/*
+ * PLACEHOLDER BRAND TOKENS.
+ * These are stand-in values, not the real Greenhouse Church identity
+ * (Taproot: https://taproot.agency/project/greenhouse-church/).
+ * See BRANDING.md at the repo root for the task to replace these with
+ * the real palette, fonts, and logo once you have unrestricted network access.
+ */
+:root {
+  --color-primary: #2f6f4e;
+  --color-primary-dark: #1d4a34;
+  --color-primary-light: #e7f2ec;
+  --color-accent: #f2a71b;
+  --color-ink: #1a1a1a;
+  --color-paper: #ffffff;
+  --color-muted: #5b6b63;
+
+  --font-heading: "Poppins", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}

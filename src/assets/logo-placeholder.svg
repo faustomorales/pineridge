@@ -1,0 +1,5 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Greenhouse Church placeholder logo">
+  <circle cx="32" cy="32" r="30" fill="#2f6f4e" />
+  <path d="M32 47c0-11 8-15 8-26 0 11-8 11-8 26z" fill="#f2a71b" />
+  <path d="M32 47c0-11-8-15-8-26 0 11 8 11 8 26z" fill="#e7f2ec" />
+</svg>

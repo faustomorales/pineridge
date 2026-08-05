@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Van Magnet — Greenhouse Church</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/brand.css" />
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <style>
+      :root {
+        --sheet-width: 18in;
+        --sheet-height: 12in;
+        --preview-scale: 0.4;
+      }
+
+      body .sheet {
+        background: var(--color-paper);
+        border: 0.35in solid var(--color-primary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 0.3in;
+        padding: 0.4in;
+      }
+
+      .sheet img {
+        width: 2.6in;
+        height: 2.6in;
+      }
+
+      .sheet h1 {
+        font-size: 46pt;
+        color: var(--color-primary-dark);
+        letter-spacing: 0.01em;
+      }
+
+      .sheet .site {
+        font-size: 20pt;
+        color: var(--color-primary);
+        font-weight: 600;
+      }
+
+      .programs {
+        margin-top: 0.15in;
+        font-size: 15pt;
+        color: var(--color-muted);
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="no-print">
+        <button class="btn" data-print>Print / Save as PDF</button>
+      </div>
+      <div class="sheet-wrap">
+        <div class="sheet">
+          <img src="/src/assets/logo-placeholder.svg" alt="" />
+          <h1>Greenhouse Church</h1>
+          <div class="site">greenhousechurch.org</div>
+          <div class="programs">Tutoring · Kids Church · Greenhouse Youth</div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/print.js"></script>
+  </body>
+</html>

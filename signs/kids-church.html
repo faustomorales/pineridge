@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yard Sign — Kids Church</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/brand.css" />
+    <link rel="stylesheet" href="/src/styles/base.css" />
+    <style>
+      :root {
+        --sheet-width: 24in;
+        --sheet-height: 18in;
+        --preview-scale: 0.3;
+      }
+
+      body .sheet {
+        background: var(--color-primary);
+        color: white;
+        padding: 1in 1.1in;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.55in;
+      }
+
+      .watermark {
+        position: absolute;
+        right: -2in;
+        bottom: -2in;
+        width: 11in;
+        height: 11in;
+        opacity: 0.12;
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 0.3in;
+      }
+
+      .eyebrow img {
+        width: 1in;
+        height: 1in;
+      }
+
+      .eyebrow span {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 24pt;
+        letter-spacing: 0.04em;
+      }
+
+      h1 {
+        font-size: 150pt;
+        line-height: 1;
+        margin-top: 0.5in;
+        color: white;
+      }
+
+      .subtitle {
+        font-size: 36pt;
+        color: var(--color-accent);
+        font-weight: 600;
+        margin-top: 0.25in;
+      }
+
+      .facts {
+        display: flex;
+        gap: 1.1in;
+        margin-top: 0.7in;
+        font-size: 32pt;
+        font-weight: 600;
+      }
+
+      .facts .label {
+        display: block;
+        font-size: 15pt;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--color-primary-light);
+      }
+
+      .contact-bar {
+        background: var(--color-primary-dark);
+        border-radius: 16px;
+        padding: 0.35in 0.6in;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 36pt;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="no-print">
+        <button class="btn" data-print>Print / Save as PDF</button>
+      </div>
+      <div class="sheet-wrap">
+        <div class="sheet">
+          <img class="watermark" src="/src/assets/logo-placeholder.svg" alt="" />
+          <div>
+            <div class="eyebrow">
+              <img src="/src/assets/logo-placeholder.svg" alt="" />
+              <span>GREENHOUSE CHURCH</span>
+            </div>
+            <h1>Kids Church</h1>
+            <div class="subtitle">Prayer · Teaching · Play</div>
+            <div class="facts">
+              <div><span class="label">Ages</span>Grades K–5</div>
+              <div><span class="label">Time</span>5:00–6:00 PM</div>
+              <div><span class="label">Starts</span>Aug 19</div>
+            </div>
+          </div>
+          <div class="contact-bar">
+            <span>Pineridge Park</span>
+            <span>850-509-8283</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/print.js"></script>
+  </body>
+</html>

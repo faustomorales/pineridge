@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: #f4f4f2;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--color-primary-dark);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary-dark);
+  border: 2px solid var(--color-primary-dark);
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary-light);
+}
+
+/*
+ * Print-sheet scaffold shared by every collateral page.
+ * `.sheet` is sized in real physical inches so print output is
+ * dimensionally correct. `.sheet-wrap` scales it down for on-screen
+ * preview via `--preview-scale` (set per page) without affecting the
+ * print layout, which resets the transform back to none.
+ */
+.page-shell {
+  padding: 2rem 1rem 4rem;
+}
+
+.sheet-wrap {
+  width: calc(var(--sheet-width) * var(--preview-scale, 1));
+  height: calc(var(--sheet-height) * var(--preview-scale, 1));
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.sheet {
+  width: var(--sheet-width);
+  height: var(--sheet-height);
+  background: var(--color-paper);
+  transform: scale(var(--preview-scale, 1));
+  transform-origin: top left;
+  position: relative;
+  overflow: hidden;
+}
+
+.no-print {
+  max-width: 40rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+@media print {
+  @page {
+    size: var(--sheet-width) var(--sheet-height);
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: white;
+  }
+
+  .page-shell {
+    padding: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .sheet-wrap {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .sheet {
+    transform: none;
+  }
+}
