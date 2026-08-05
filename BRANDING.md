@@ -75,6 +75,3 @@ reasonable defaults — confirm with whoever's ordering the physical prints:
 - Van magnet: 18in × 12in landscape.
 - Handout: 8.5in × 11in portrait, single page, all three programs on one
   sheet.
-- No recurring weekly day-of-week is listed anywhere (only start dates and
-  daily time windows were given) — if these programs run on specific
-  weekdays, that's worth adding to the handout and signs.

@@ -98,14 +98,11 @@ in the HTML of `handout.html` and the three `signs/*.html` files — there's
 no shared data file. If a program's logistics change, update all pages that
 reference it by hand.
 
-| Program | Address | Time | Ages | Starts | Contact | Notes |
-|---|---|---|---|---|---|---|
-| Tutoring | 2925 NW 29th Ave | 6:00–7:45 PM | K–5 | Aug 17 | 904-401-0728 | Transportation provided; permission slip required |
-| Kids Church | Pineridge Park | 5:00–6:00 PM | K–5 | Aug 19 | 850-509-8283 | — |
-| Greenhouse Youth | 11200 NW 39th Ave | 6:00–9:00 PM | Grades 6–12 | Aug 19 | 305-394-2645 | Transportation & food provided; signed permission slip required |
-
-No recurring weekday was given in the source request — only start dates
-and daily time windows.
+| Program | Address | Day | Time | Ages | Starts | Contact | Notes |
+|---|---|---|---|---|---|---|---|
+| Tutoring | 2925 NW 29th Ave | Mondays | 6:00–7:45 PM | K–5 | Aug 17 | 904-401-0728 | Transportation provided; permission slip required |
+| Kids Church | Pineridge Park | Wednesdays | 5:00–6:00 PM | K–5 | Aug 19 | 850-509-8283 | — |
+| Greenhouse Youth | 11200 NW 39th Ave | Wednesdays | 6:00–9:00 PM | Grades 6–12 | Aug 19 | 305-394-2645 | Transportation & food provided; signed permission slip required |
 
 ## What Does Not Exist (yet)
 
