@@ -6,9 +6,9 @@
  *
  * Body font: the real site uses "objektiv-mk1", a commercial typeface
  * served via Adobe Typekit (use.typekit.net) that can't be linked without
- * their kit ID. Manrope is used here as a free, visually close geometric
- * sans substitute — swap in objektiv-mk1 via a Typekit <script> if a kit
- * ID becomes available.
+ * their kit ID. Nunito Sans is used here as a free, visually close
+ * geometric sans substitute — swap in objektiv-mk1 via a Typekit <script>
+ * if a kit ID becomes available.
  */
 :root {
   --color-primary: #57d744; /* "greenhouse" */
@@ -20,5 +20,5 @@
   --color-muted: #728197;
 
   --font-heading: "Anton", system-ui, sans-serif;
-  --font-body: "Manrope", system-ui, sans-serif;
+  --font-body: "Nunito Sans", system-ui, sans-serif;
 }
