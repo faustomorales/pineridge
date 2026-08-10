@@ -1,19 +1,24 @@
 /*
- * PLACEHOLDER BRAND TOKENS.
- * These are stand-in values, not the real Greenhouse Church identity
- * (Taproot: https://taproot.agency/project/greenhouse-church/).
- * See BRANDING.md at the repo root for the task to replace these with
- * the real palette, fonts, and logo once you have unrestricted network access.
+ * Real Greenhouse Church brand tokens, sourced from the site's own
+ * Tailwind config (color utilities .text-greenhouse/.bg-connect/etc. in
+ * a saved copy of greenhousechurch.org) and the official logo SVGs
+ * (greenhousechurch.org/wp-content/uploads/2023/10/logo-primary.svg).
+ *
+ * Body font: the real site uses "objektiv-mk1", a commercial typeface
+ * served via Adobe Typekit (use.typekit.net) that can't be linked without
+ * their kit ID. Manrope is used here as a free, visually close geometric
+ * sans substitute — swap in objektiv-mk1 via a Typekit <script> if a kit
+ * ID becomes available.
  */
 :root {
-  --color-primary: #2f6f4e;
-  --color-primary-dark: #1d4a34;
-  --color-primary-light: #e7f2ec;
-  --color-accent: #f2a71b;
-  --color-ink: #1a1a1a;
+  --color-primary: #57d744; /* "greenhouse" */
+  --color-primary-dark: #161a1d; /* "catalyst" */
+  --color-primary-light: #f1f3f5; /* "ash" */
+  --color-accent: #27aaf3; /* "community" */
+  --color-ink: #404752; /* "connect" */
   --color-paper: #ffffff;
-  --color-muted: #5b6b63;
+  --color-muted: #728197;
 
-  --font-heading: "Poppins", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-heading: "Anton", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
 }

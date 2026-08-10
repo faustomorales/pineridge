@@ -5,16 +5,14 @@ Developer guide for AI assistants working in this repository.
 ## Project Overview
 
 Static design collateral for three Greenhouse Church volunteer programs
-(Tutoring, Kids Church, Greenhouse Youth): a synthesized one-page handout,
-a yard sign per program, and a van magnet. Pages are meant to be opened in
-a browser and exported via Print → Save as PDF at their true physical size
-for a print vendor.
+(Tutoring, Kids Church, Greenhouse Youth): a synthesized one-page handout
+and a van magnet. Pages are meant to be opened in a browser and exported
+via Print → Save as PDF at their true physical size for a print vendor.
 
 Live at: `pineridge.robinbay.com` (GitHub Pages, custom domain via `public/CNAME`)
 
-**Branding is currently a placeholder.** See `BRANDING.md` for the task to
-apply the real Greenhouse Church identity (this sandbox couldn't reach
-`taproot.agency` or `greenhousechurch.org` — both blocked by network policy).
+Branding uses the real Greenhouse Church identity (colors, fonts, logo).
+See `BRAND_GUIDE.md` for the source palette/typography/logo details.
 
 ## Tech Stack
 
@@ -36,24 +34,21 @@ No test runner or linter configured. Verification is manual via the browser.
 
 ```
 pineridge/
-├── index.html                       # Landing page linking to all 5 pieces
+├── index.html                       # Landing page linking to both pieces
 ├── handout.html                     # 8.5x11in flyer, all 3 programs
 ├── van-magnet.html                  # 18x12in general church branding magnet
-├── signs/
-│   ├── tutoring.html                # 24x18in yard sign
-│   ├── kids-church.html             # 24x18in yard sign
-│   └── greenhouse-youth.html        # 24x18in yard sign
 ├── src/
 │   ├── styles/
-│   │   ├── brand.css                # Placeholder color/font CSS custom properties
+│   │   ├── brand.css                # Real color/font CSS custom properties
 │   │   └── base.css                 # Resets, .sheet/.sheet-wrap print scaffold, buttons
 │   ├── print.js                     # Wires up [data-print] buttons to window.print()
 │   └── assets/
-│       └── logo-placeholder.svg     # Placeholder mark — replace per BRANDING.md
+│       ├── logo.svg                 # Icon mark — used in every logo slot on the site
+│       └── logo-full.svg            # Wide icon+wordmark lockup — not currently used
 ├── public/
 │   └── CNAME                        # pineridge.robinbay.com
 ├── vite.config.js                   # Multi-page rollupOptions.input
-├── BRANDING.md                      # Task: apply real Greenhouse Church brand
+├── BRAND_GUIDE.md                   # Distilled palette/typography/logo reference
 └── .github/workflows/deploy.yml     # CI/CD — builds and deploys main to GH Pages
 ```
 
@@ -94,9 +89,8 @@ dev`.
 ## Content source of truth
 
 Program details (schedule, location, contact, requirements) live directly
-in the HTML of `handout.html` and the three `signs/*.html` files — there's
-no shared data file. If a program's logistics change, update all pages that
-reference it by hand.
+in the HTML of `handout.html` — there's no shared data file. If a
+program's logistics change, update it by hand.
 
 | Program | Address | Day | Time | Ages | Starts | Contact | Notes |
 |---|---|---|---|---|---|---|---|
@@ -106,10 +100,10 @@ reference it by hand.
 
 ## What Does Not Exist (yet)
 
-- No real Greenhouse Church branding (colors/fonts/logo) — see `BRANDING.md`
 - No dedicated print-ready export pipeline (bleed/crop marks/CMYK) — browser
   Print → Save as PDF at the `@page`-declared physical size is the intended
   workflow
-- No shared JSON/data file for program content — each page hardcodes its own
-  copy
+- No shared JSON/data file for program content — the handout hardcodes its
+  own copy
 - No tests or linter
+- No yard signs — removed; the handout and van magnet cover the need
