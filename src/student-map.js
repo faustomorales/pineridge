@@ -1,0 +1,6 @@
+import "./print.js";
+const ns="http://www.w3.org/2000/svg";
+function center(el,map){const a=el.getBoundingClientRect(),b=map.getBoundingClientRect(),sx=map.clientWidth/b.width,sy=map.clientHeight/b.height;return{x:(a.left+a.width/2-b.left)*sx,y:(a.top+a.height/2-b.top)*sy}}
+function line(a,b,kind,arrow=false){const p=document.createElementNS(ns,"path"),mx=(a.x+b.x)/2;p.setAttribute("d",`M${a.x} ${a.y} C${mx} ${a.y} ${mx} ${b.y} ${b.x} ${b.y}`);p.setAttribute("class",kind);if(arrow)p.setAttribute("marker-end","url(#arrow)");return p}
+function draw(){const map=document.querySelector("[data-map]");if(!map)return;const svg=map.querySelector("[data-lines]"),rg=map.querySelector("[data-route]"),wg=map.querySelector("[data-rewards]");svg.setAttribute("viewBox",`0 0 ${map.clientWidth} ${map.clientHeight}`);rg.replaceChildren();wg.replaceChildren();const stops=[...map.querySelectorAll("[data-stop]")];stops.slice(0,-1).forEach((s,i)=>rg.append(line(center(s,map),center(stops[i+1],map),"route",true)));const star=center(map.querySelector("[data-van-star]"),map);map.querySelectorAll("[data-van]").forEach(v=>wg.append(line(star,center(v,map),"reward")))}
+(document.fonts?.ready??Promise.resolve()).then(()=>requestAnimationFrame(draw));new ResizeObserver(draw).observe(document.querySelector("[data-map]"));window.addEventListener("beforeprint",draw);

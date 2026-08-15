@@ -9,6 +9,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         handout: resolve(__dirname, "handout.html"),
         vanMagnet: resolve(__dirname, "van-magnet.html"),
+        studentExpectations: resolve(__dirname, "student-expectations.html"),
       },
     },
   },

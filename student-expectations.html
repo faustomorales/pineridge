@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Student Expectations — Greenhouse Church</title>
+<link rel="icon" href="/src/assets/logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/src/styles/brand.css">
+<link rel="stylesheet" href="/src/styles/base.css">
+<style>
+:root{--sheet-width:11in;--sheet-height:8.5in;--preview-scale:.69;--yellow:#ffd84d;--purple:#7957c8}
+body{font-family:"Nunito Sans",sans-serif}
+.sheet-wrap+.sheet-wrap{margin-top:1.2rem}
+body .sheet{padding:.34in;background:#fffdf7}
+.cols{height:100%;display:grid;grid-template-columns:1fr 1fr;gap:.24in}
+.panel{position:relative;height:100%;border:4px solid #404752;border-radius:24px;padding:.25in;background:#f3fbff;overflow:hidden}
+.panel:before{content:"";position:absolute;inset:8px;border:2px dashed #8bd3fa;border-radius:16px}
+.panel>*{position:relative;z-index:1}
+.okay{background:#f3ffef}
+.title{display:flex;justify-content:center;align-items:center;gap:.1in;margin:0 0 .2in}
+.title h1{font-size:31pt;line-height:1;color:#161a1d}
+.title h1:after{content:"";display:block;height:.14in;background:#57d744;opacity:.55;margin-top:-.1in;transform:rotate(-1deg)}
+.rules{display:grid;gap:.18in}
+.rule,.okay-rule{display:grid;grid-template-columns:.92in 1fr;align-items:center;gap:.16in;padding:.11in .18in;min-height:1.43in;background:#fff;border-radius:19px;box-shadow:0 4px 0 #40475222}
+.rule img,.okay-rule img,.sprite{width:.86in;height:.86in;object-fit:contain;border-radius:16px}
+.rule strong{font-size:19pt;line-height:1.13;color:#161a1d}
+.rule small{display:block;font-size:12pt;color:#728197;margin-top:.04in}
+.okay-rules{display:grid;gap:.13in}
+.okay-rule{min-height:1.14in}
+.okay-rule p{font-size:15.5pt;font-weight:900;line-height:1.14;color:#161a1d}
+.okay-rule em{font-style:normal;text-decoration:underline 5px var(--yellow)}
+.sprite{display:block;background:url('/src/assets/student-expectations/object-stickers.png') no-repeat;background-size:400% 300%}
+.van{background-image:url('/src/assets/student-expectations/greenhouse-van.png');background-size:contain;background-position:center}
+.belt{background-position:100% 0}
+.home{background-position:0 100%}
+.verse{background-position:33.333% 100%}
+.prayer{background-position:66.666% 100%}
+.tutor{background-position:100% 100%}
+.map-panel{background:#f3fbff}
+.map-panel .title{margin-bottom:.02in}
+.subtitle{text-align:center;font-size:11pt;font-weight:900;color:#728197}
+.map{position:relative;height:6.3in;margin-top:.05in}
+.lines{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.route{fill:none;stroke:#404752;stroke-width:8;stroke-linecap:round}
+.reward{fill:none;stroke:var(--purple);stroke-width:4;stroke-dasharray:10 8}
+.grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:2.25in 2.25in;gap:.55in .18in;padding:.05in .08in}
+.stop{justify-self:center;width:1.68in;min-height:2in;padding:.1in;display:flex;flex-direction:column;align-items:center;text-align:center;border:3px solid #404752;border-radius:19px;background:#fff;box-shadow:4px 5px 0 #4047522b}
+.stop .sprite,.emoji{width:.82in;height:.82in}
+.emoji{display:grid;place-items:center;border-radius:16px;background:#fff3ad;font-size:34pt}
+.stop h2{font-family:"Nunito Sans";font-size:13.5pt;line-height:1;margin-top:.04in}
+.note{font-size:8.5pt;color:#728197;font-weight:900;margin-top:.04in}
+.star{margin-top:auto;width:100%;padding:.04in;border-radius:10px;background:#fff4ba;font-size:8.5pt;font-weight:900}
+.star:before{content:"★ ";color:var(--yellow);-webkit-text-stroke:1px #404752;font-size:16pt}
+.s1{grid-column:1}
+.s2{grid-column:2}
+.s3{grid-column:3}
+.s4{grid-column:4}
+.s5{grid-column:5}
+.r2{grid-row:2}
+.strikes{grid-column:1;grid-row:2;background:#fff2ef}
+.van-star{position:absolute;z-index:3;left:50%;top:2.3in;transform:translateX(-50%);width:1.9in;padding:.08in;border:3px solid var(--purple);border-radius:15px;background:#f5efff;text-align:center;font-size:9.5pt;font-weight:900}
+.van-star b{display:block;font-size:13pt}
+.message{position:absolute;z-index:4;left:.3in;right:.3in;bottom:.02in;padding:.12in;border:3px solid #404752;border-radius:17px;background:#57d744;text-align:center;font-size:13.5pt;font-weight:900}
+@media print{.sheet-wrap+.sheet-wrap{margin-top:0}
+.sheet-wrap{break-after:page}
+.sheet-wrap:last-child{break-after:auto}
+*{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}
+
+</style>
+</head>
+<body>
+<div class="page-shell">
+<div class="no-print">
+<button class="btn" data-print>Print both sides / Save as PDF</button>
+<p>US Letter landscape · two-sided · flip on short edge · 100% scale</p>
+</div>
+<div class="sheet-wrap">
+<main class="sheet">
+<div class="cols">
+<section class="panel">
+<header class="title">
+<span>🚐</span>
+<h1>Van Rules</h1>
+</header>
+<div class="rules">
+<div class="rule">
+<img src="/src/assets/student-expectations/no-phone-food.png" alt="No phone or chips">
+<div>
+<strong>No phones or food</strong>
+<small>We’ll hold them for you.</small>
+</div>
+</div>
+<div class="rule">
+<span class="sprite van"></span>
+<strong>Sit where you’re asked to sit</strong>
+</div>
+<div class="rule">
+<span class="sprite belt">
+</span>
+<strong>Seat belt</strong>
+</div>
+</div>
+</section>
+<section class="panel okay">
+<header class="title">
+<span>✨</span>
+<h1>OKAY Rules</h1>
+</header>
+<div class="okay-rules">
+<div class="okay-rule">
+<img src="/src/assets/student-expectations/okay-o.png" alt="O">
+<p>Obey your leaders</p>
+</div>
+<div class="okay-rule">
+<img src="/src/assets/student-expectations/okay-k.png" alt="K">
+<p>Keep your hands, feet, and belongings to yourself</p>
+</div>
+<div class="okay-rule">
+<img src="/src/assets/student-expectations/okay-a.png" alt="A">
+<p>Always pay attention <em>and</em> act with kindness</p>
+</div>
+<div class="okay-rule">
+<img src="/src/assets/student-expectations/okay-y.png" alt="Y">
+<p>You can stay or you can go but you’re always special to Jesus and to us.</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<div class="sheet-wrap">
+<main class="sheet">
+<section class="panel map-panel">
+<header class="title">
+<span>⭐</span>
+<h1>Our Tutoring Day</h1>
+</header>
+<p class="subtitle">Follow the path. Earn all 5 stars along the way!</p>
+<div class="map" data-map>
+<svg class="lines" data-lines>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M0 0L10 5L0 10Z" fill="#404752"/>
+</marker>
+</defs>
+<g data-route>
+</g>
+<g data-rewards>
+</g>
+</svg>
+<div class="grid">
+<article class="stop s1" data-stop>
+<span class="sprite home">
+</span>
+<h2>Home</h2>
+<p class="note">Ready to go!</p>
+</article>
+<article class="stop s2" data-stop>
+<span class="emoji">👋</span>
+<h2>Pickup</h2>
+</article>
+<article class="stop s3" data-stop data-van>
+<span class="sprite van"></span>
+<h2>Van Ride</h2>
+<p class="note">To tutoring</p>
+</article>
+<article class="stop s4" data-stop>
+<span class="emoji">🍎</span>
+<h2>Snack</h2>
+</article>
+<article class="stop s5" data-stop>
+<span class="sprite verse">
+</span>
+<h2>Memory Verse</h2>
+<div class="star">Be respectful</div>
+</article>
+<article class="stop s5 r2" data-stop>
+<span class="sprite prayer">
+</span>
+<h2>Prayer</h2>
+<div class="star">Be respectful</div>
+</article>
+<article class="stop s4 r2" data-stop>
+<span class="sprite tutor">
+</span>
+<h2>Tutoring</h2>
+<div class="star">Be focused</div>
+</article>
+<article class="stop s3 r2" data-stop data-van>
+<span class="sprite van"></span>
+<h2>Dropoff</h2>
+<p class="note">Van ride home</p>
+</article>
+<article class="stop s2 r2" data-stop>
+<span class="sprite home">
+</span>
+<h2>Home</h2>
+</article>
+<article class="stop strikes">
+<span class="emoji">1·2·3</span>
+<h2>No 3 Strikes</h2>
+<div class="star">Follow OKAY rules</div>
+</article>
+</div>
+<div class="van-star" data-van-star>
+<b>★ Van Star</b>Be safe and respectful.<br>Earned after Dropoff!</div>
+<p class="message">The more stars we get, the more fun surprises we get to have at the end-of-semester party.</p>
+</div>
+</section>
+</main>
+</div>
+</div>
+<script type="module" src="/src/student-map.js">
+</script>
+</body>
+</html>
