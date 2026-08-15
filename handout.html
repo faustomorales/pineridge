@@ -103,12 +103,17 @@
 
       .flags {
         margin-top: 0.1in;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.15in;
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        justify-content: space-between;
+        gap: 0.06in 0.3in;
         font-size: 9.5pt;
         font-weight: 600;
         color: var(--color-primary-dark);
+      }
+
+      .flags .contact {
+        grid-column: 1 / -1;
       }
 
       .footer {
@@ -148,9 +153,9 @@
                 <div><span class="label">Location</span>2925 NW 29th Ave</div>
               </div>
               <div class="flags">
-                <span>🚐 Transportation provided</span>
+                <span class="contact">☎ Tess Bottenhorn, 904-401-0728</span>
                 <span>📄 Permission slip required</span>
-                <span>☎ Tess Bottenhorn, 904-401-0728</span>
+                <span>🚐 Transportation from Pineridge provided</span>
               </div>
             </div>
 
@@ -165,7 +170,7 @@
                 <div><span class="label">Location</span>Pineridge Park</div>
               </div>
               <div class="flags">
-                <span>☎ Cassidy Klein, 850-509-8283</span>
+                <span class="contact">☎ Cassidy Klein, 850-509-8283</span>
               </div>
             </div>
 
@@ -180,16 +185,17 @@
                 <div><span class="label">Location</span>11200 NW 39th Ave</div>
               </div>
               <div class="flags">
-                <span>🚐 Transportation &amp; food provided</span>
-                <span>📄 Signed permission slip required</span>
-                <span>☎ Fausto Morales, 305-394-2645</span>
+                <span class="contact">☎ Fausto Morales, 305-394-2645</span>
+                <span>📄 Permission slip required</span>
+                <span>🚐 Transportation from Pineridge provided</span>
+                <span>🍽 Food provided</span>
               </div>
             </div>
           </div>
 
           <div class="footer">
-            greenhousechurch.org &nbsp;·&nbsp; Contact the number above for the
-            program you're interested in, or to ask questions.
+            greenhousechurch.org &nbsp;·&nbsp; Please call or text the contact for
+            each program with any questions.
           </div>
         </div>
       </div>
