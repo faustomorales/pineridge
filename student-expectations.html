@@ -31,13 +31,15 @@ body .sheet{padding:.34in;background:#fffdf7}
 .okay-rule p{font-size:15.5pt;font-weight:900;line-height:1.14;color:#161a1d}
 .okay-rule small{display:block;margin-top:.04in;color:#728197;font-size:10.5pt;font-weight:800;line-height:1.1}
 .okay-rule em{font-style:normal;text-decoration:underline 5px var(--yellow)}
-.sprite{display:block;background:url('/src/assets/student-expectations/object-stickers.png') no-repeat;background-size:400% 300%}
+.sprite{display:block;background-repeat:no-repeat;background-size:contain;background-position:center}
 .van{background-image:url('/src/assets/student-expectations/greenhouse-van.png');background-size:contain;background-position:center}
-.belt{background-position:100% 0}
-.home{background-position:0 100%}
-.verse{background-position:33.333% 100%}
-.prayer{background-position:66.666% 100%}
-.tutor{background-position:100% 100%}
+.assigned-seat{background-image:url('/src/assets/student-expectations/assigned-seat.png')}
+.snack-icon{background-image:url('/src/assets/student-expectations/snack.png')}
+.belt{background-image:url('/src/assets/student-expectations/seat-belt.png')}
+.home{background-image:url('/src/assets/student-expectations/home.png')}
+.verse{background-image:url('/src/assets/student-expectations/memory-verse.png')}
+.prayer{background-image:url('/src/assets/student-expectations/prayer.png')}
+.tutor{background-image:url('/src/assets/student-expectations/tutoring.png')}
 .map-panel{background:#f3fbff}
 .map-panel .title{margin-bottom:.02in}
 .subtitle{text-align:center;font-size:11pt;font-weight:900;color:#728197}
@@ -63,7 +65,7 @@ body .sheet{padding:.34in;background:#fffdf7}
 .van-star{position:absolute;z-index:3;left:50%;top:2.3in;transform:translateX(-50%);width:1.9in;padding:.08in;border:3px solid var(--purple);border-radius:15px;background:#f5efff;text-align:center;font-size:9.5pt;font-weight:900}
 .van-star b{display:block;font-size:13pt}
 .message{position:absolute;z-index:4;left:.3in;right:.3in;bottom:.02in;padding:.12in;border:3px solid #404752;border-radius:17px;background:#57d744;text-align:center;font-size:13.5pt;font-weight:900}
-.layout-tools{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.6rem;margin-top:.7rem}.layout-tools label{font-weight:800}.layout-toast{min-height:1.2em;margin-top:.4rem;font-weight:800}.layout-item.layout-active{touch-action:none;cursor:move;outline:3px dashed #7957c8;outline-offset:2px}.layout-area.editing{position:relative}.layout-area.editing>.layout-item{position:absolute;margin:0;z-index:5}.layout-area.editing.grid{display:block}
+.layout-tools{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.6rem;margin-top:.7rem}.layout-tools label{font-weight:800}.layout-toast{min-height:1.2em;margin-top:.4rem;font-weight:800}.layout-item.layout-active{touch-action:none;cursor:move;outline:3px dashed #7957c8;outline-offset:2px}.layout-area.editing{position:relative}.layout-area.editing>.layout-item{position:absolute;margin:0;z-index:5}.layout-area.editing.grid{display:block}.text-editing{cursor:text!important;outline:3px solid #27aaf3!important;outline-offset:3px;background:#fff!important;box-shadow:0 0 0 6px #27aaf333!important}
 @media print{.sheet-wrap+.sheet-wrap{margin-top:0}
 .sheet-wrap{break-after:page}
 .sheet-wrap:last-child{break-after:auto}
@@ -96,7 +98,7 @@ body .sheet{padding:.34in;background:#fffdf7}
 </div>
 </div>
 <div class="rule layout-item" data-layout-id="van-seat">
-<span class="sprite van"></span>
+<span class="sprite assigned-seat"></span>
 <div><strong>Sit where you’re asked to sit</strong><small>Stay in your assigned seat.</small></div>
 </div>
 <div class="rule layout-item" data-layout-id="van-belt">
@@ -170,7 +172,7 @@ body .sheet{padding:.34in;background:#fffdf7}
 <p class="note">To tutoring</p>
 </article>
 <article class="stop s4 layout-item" data-layout-id="step-snack" data-stop>
-<span class="emoji">🍎</span>
+<span class="sprite snack-icon"></span>
 <h2>Snack</h2>
 </article>
 <article class="stop s5 layout-item" data-layout-id="step-memory" data-stop>
