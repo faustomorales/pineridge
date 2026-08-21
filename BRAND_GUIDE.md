@@ -14,7 +14,7 @@ Named Tailwind tokens pulled from the site's own CSS
 
 | Token | Hex | RGB | Used here as |
 |---|---|---|---|
-| `greenhouse` | `#57D744` | 87 215 68 | `--color-primary` — the brand green, from the logo icon |
+| `greenhouse` | `#66845B` | 102 132 91 | `--color-primary` — the current brand green, used in the logo icon |
 | `connect` | `#404752` | 64 71 82 | `--color-ink` — dark slate, from the logo wordmark |
 | `catalyst` | `#161A1D` | 22 26 29 | `--color-primary-dark` — near-black, used for high-contrast text/surfaces |
 | `community` | `#27AAF3` | 39 170 243 | `--color-accent` — bright blue |
@@ -22,12 +22,9 @@ Named Tailwind tokens pulled from the site's own CSS
 | `blood` | `#D43535` | 212 53 53 | not currently used in this repo; reserved (alerts/errors on the real site) |
 | `--color-muted` | `#728197` | — | not one of the named tokens; a mid-gray we chose to sit between `connect` and `ash` for de-emphasized text (captions, footers) |
 
-**Contrast note:** `greenhouse` (the bright green) fails WCAG contrast
-against white, `community` blue, and even `blood` red — none of those
-combinations clear 3:1. Any text or icon placed on a `greenhouse`
-background in this repo uses `catalyst` or `connect` instead. Recheck
-contrast with a calculator if you introduce a new green-background
-placement.
+**Contrast note:** Text and icons placed on a `greenhouse` background in
+this repo use `catalyst` or `connect`. Recheck contrast with a calculator
+if you introduce a new green-background placement.
 
 ## Typography
 
@@ -57,7 +54,7 @@ Two official SVGs, both green icon + optional dark wordmark:
   all small fixed-size boxes usually paired with a separate "GREENHOUSE
   CHURCH" text label.
 
-Both are pure green (`#57D744`) for the icon and dark slate (`#404752`)
+Both use the current green (`#66845B`) for the icon and dark slate (`#404752`)
 for any wordmark strokes — no other logo color variants (e.g. white/reversed
 for dark backgrounds) were found on the live site.
 

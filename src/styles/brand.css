@@ -11,7 +11,7 @@
  * if a kit ID becomes available.
  */
 :root {
-  --color-primary: #57d744; /* "greenhouse" */
+  --color-primary: #66845b; /* current Greenhouse brand green */
   --color-primary-dark: #161a1d; /* "catalyst" */
   --color-primary-light: #f1f3f5; /* "ash" */
   --color-accent: #27aaf3; /* "community" */

@@ -20,7 +20,7 @@ body .sheet{padding:.34in;background:#fffdf7}
 .okay{background:#f3ffef}
 .title{display:flex;justify-content:center;align-items:center;gap:.1in;margin:0 0 .2in}
 .title h1{font-size:31pt;line-height:1;color:#161a1d}
-.title h1:after{content:"";display:block;height:.14in;background:#57d744;opacity:.55;margin-top:-.1in;transform:rotate(-1deg)}
+.title h1:after{content:"";display:block;height:.14in;background:var(--color-primary);opacity:.55;margin-top:-.1in;transform:rotate(-1deg)}
 .rules{display:grid;gap:.18in}
 .rule,.okay-rule{display:grid;grid-template-columns:.92in 1fr;align-items:center;gap:.16in;padding:.11in .18in;min-height:1.43in;background:#fff;border-radius:19px;box-shadow:0 4px 0 #40475222}
 .rule img,.okay-rule img,.sprite{width:.86in;height:.86in;object-fit:contain;border-radius:16px}
@@ -64,7 +64,7 @@ body .sheet{padding:.34in;background:#fffdf7}
 .strikes{grid-column:1;grid-row:2;background:#fff2ef}
 .van-star{position:absolute;z-index:3;left:50%;top:2.3in;transform:translateX(-50%);width:1.9in;padding:.08in;border:3px solid var(--purple);border-radius:15px;background:#f5efff;text-align:center;font-size:9.5pt;font-weight:900}
 .van-star b{display:block;font-size:13pt}
-.message{position:absolute;z-index:4;left:.3in;right:.3in;bottom:.02in;padding:.12in;border:3px solid #404752;border-radius:17px;background:#57d744;text-align:center;font-size:13.5pt;font-weight:900}
+.message{position:absolute;z-index:4;left:.3in;right:.3in;bottom:.02in;padding:.12in;border:3px solid #404752;border-radius:17px;background:var(--color-primary);text-align:center;font-size:13.5pt;font-weight:900}
 .layout-tools{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.6rem;margin-top:.7rem}.layout-tools label{font-weight:800}.layout-toast{min-height:1.2em;margin-top:.4rem;font-weight:800}.layout-item.layout-active{touch-action:none;cursor:move;outline:3px dashed #7957c8;outline-offset:2px}.layout-area.editing{position:relative}.layout-area.editing>.layout-item{position:absolute;margin:0;z-index:5}.layout-area.editing.grid{display:block}.text-editing{cursor:text!important;outline:3px solid #27aaf3!important;outline-offset:3px;background:#fff!important;box-shadow:0 0 0 6px #27aaf333!important}
 @media print{.sheet-wrap+.sheet-wrap{margin-top:0}
 .sheet-wrap{break-after:page}
