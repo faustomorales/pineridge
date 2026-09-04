@@ -1,4 +1,4 @@
-# CLAUDE.md — Pineridge (Greenhouse Church Program Collateral)
+# CONTEXT.md — Pineridge (Greenhouse Church Program Collateral)
 
 Developer guide for AI assistants working in this repository.
 
