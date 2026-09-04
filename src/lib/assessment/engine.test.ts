@@ -1,0 +1,215 @@
+import { describe, expect, it } from "vitest";
+
+import {
+  createAssessmentRun,
+  transitionAssessment,
+  type AssessmentDefinition,
+  type AssessmentRun,
+} from "./engine";
+import type { FiveWords } from "./model";
+
+const words = (prefix: string) =>
+  Array.from({ length: 5 }, (_, index) => ({
+    id: `${prefix}-${index + 1}`,
+    text: `${prefix}${index + 1}`,
+    kind: index < 3 ? ("real" as const) : ("invented" as const),
+  })) as unknown as FiveWords;
+
+const definition: AssessmentDefinition = {
+  bands: [
+    {
+      id: "short-vowels",
+      label: "Short vowels",
+      checkpointGroups: [words("a"), words("b"), words("c"), words("d")],
+      probes: [
+        {
+          id: "lesson-7-f",
+          lesson: "7",
+          concept: "f /f/",
+          words: words("f"),
+        },
+        {
+          id: "lesson-8-i",
+          lesson: "8",
+          concept: "i /ĭ/",
+          words: words("i"),
+        },
+        {
+          id: "lesson-9-s",
+          lesson: "9",
+          concept: "s /s/",
+          words: words("s"),
+        },
+      ],
+    },
+    {
+      id: "digraphs",
+      label: "Digraphs",
+      checkpointGroups: [words("e"), words("g"), words("h"), words("j")],
+      probes: [],
+    },
+  ],
+};
+
+const start = () =>
+  transitionAssessment(createAssessmentRun(definition), { type: "confirm" });
+
+const judge = (run: AssessmentRun, correct: boolean) =>
+  transitionAssessment(run, { type: "judge", correct });
+
+describe("assessment run", () => {
+  it("advances to the next Checkpoint after 18 of 20 correct", () => {
+    let run = start();
+
+    for (let index = 0; index < 20; index += 1) {
+      run = judge(run, index >= 2);
+    }
+
+    expect(run.status).toBe("active");
+    expect(run.position).toMatchObject({
+      bandIndex: 1,
+      stage: "checkpoint",
+      groupIndex: 0,
+      wordIndex: 0,
+    });
+    expect(run.responses).toHaveLength(20);
+    expect(run.demonstratedGaps).toEqual([]);
+  });
+
+  it("switches to focused probing after three misses in one Checkpoint group", () => {
+    let run = start();
+    run = judge(run, false);
+    run = judge(run, false);
+    run = judge(run, false);
+
+    expect(run.status).toBe("active");
+    expect(run.position).toMatchObject({
+      bandIndex: 0,
+      stage: "focus",
+      probeIndex: 0,
+      wordIndex: 0,
+    });
+  });
+
+  it("switches to focused probing after finishing a Checkpoint at 17 of 20", () => {
+    let run = start();
+    for (let index = 0; index < 20; index += 1) {
+      run = judge(run, ![0, 5, 10].includes(index));
+    }
+
+    expect(run.status).toBe("active");
+    expect(run.position).toMatchObject({ stage: "focus", probeIndex: 0 });
+  });
+
+  it("records a Demonstrated Gap after two misses and continues the probe", () => {
+    let run = start();
+    run = judge(judge(judge(run, false), false), false);
+    run = judge(run, false);
+    run = judge(run, false);
+
+    expect(run.demonstratedGaps).toEqual([
+      {
+        bandId: "short-vowels",
+        probeId: "lesson-7-f",
+        lesson: "7",
+        concept: "f /f/",
+      },
+    ]);
+    expect(run.status).toBe("active");
+    expect(run.position.wordIndex).toBe(2);
+  });
+
+  it("ends after a third miss in one Concept Probe", () => {
+    let run = start();
+    run = judge(judge(judge(run, false), false), false);
+    run = judge(judge(judge(run, false), false), false);
+
+    expect(run.status).toBe("complete");
+    expect(run.completionReason).toBe("needs-support");
+    expect(run.demonstratedGaps).toHaveLength(1);
+  });
+
+  it("undoes a judgment that caused completion", () => {
+    let run = start();
+    run = judge(judge(judge(run, false), false), false);
+    run = judge(judge(judge(run, false), false), false);
+
+    run = transitionAssessment(run, { type: "undo" });
+
+    expect(run.status).toBe("active");
+    expect(run.responses.at(-1)?.word.id).toBe("f-2");
+    expect(run.position).toMatchObject({ stage: "focus", wordIndex: 2 });
+
+    const afterSecondUndo = transitionAssessment(run, { type: "undo" });
+    expect(afterSecondUndo).toEqual(run);
+  });
+
+  it("undoes only the immediately previous active judgment", () => {
+    let run = judge(start(), true);
+    expect(run.responses).toHaveLength(1);
+
+    run = transitionAssessment(run, { type: "undo" });
+    expect(run.responses).toHaveLength(0);
+    expect(run.position).toMatchObject({
+      stage: "checkpoint",
+      groupIndex: 0,
+      wordIndex: 0,
+    });
+    expect(transitionAssessment(run, { type: "undo" })).toEqual(run);
+  });
+
+  it("undoes the judgment that switched a Checkpoint into focus", () => {
+    let run = start();
+    run = judge(judge(judge(run, false), false), false);
+    expect(run.position.stage).toBe("focus");
+
+    run = transitionAssessment(run, { type: "undo" });
+    expect(run.status).toBe("active");
+    expect(run.responses).toHaveLength(2);
+    expect(run.position).toMatchObject({
+      stage: "checkpoint",
+      groupIndex: 0,
+      wordIndex: 2,
+    });
+  });
+
+  it("ends as soon as a third Demonstrated Gap is observed", () => {
+    let run = start();
+    run = judge(judge(judge(run, false), false), false);
+
+    for (let probe = 0; probe < 2; probe += 1) {
+      for (const correct of [false, false, true, true, true]) {
+        run = judge(run, correct);
+      }
+    }
+    run = judge(run, false);
+    run = judge(run, false);
+
+    expect(run.status).toBe("complete");
+    expect(run.demonstratedGaps.map((gap) => gap.lesson)).toEqual([
+      "7",
+      "8",
+      "9",
+    ]);
+  });
+
+  it("finishes with no Starting Point when every Checkpoint passes", () => {
+    let run = start();
+    for (let index = 0; index < 40; index += 1) run = judge(run, true);
+
+    expect(run.status).toBe("complete");
+    expect(run.completionReason).toBe("all-passed");
+    expect(run.demonstratedGaps).toEqual([]);
+  });
+
+  it("exposes printing as a Tutor Result operation", () => {
+    let run = createAssessmentRun({ bands: [] });
+    run = transitionAssessment(run, { type: "confirm" });
+    run = transitionAssessment(run, { type: "reveal" });
+    run = transitionAssessment(run, { type: "requestPrint" });
+    expect(run.printRequested).toBe(true);
+
+    run = transitionAssessment(run, { type: "printHandled" });
+    expect(run.printRequested).toBe(false);
+  });
+});

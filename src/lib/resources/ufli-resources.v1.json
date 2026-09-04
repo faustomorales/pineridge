@@ -1,0 +1,1525 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-09-04",
+  "toolboxIndexUrl": "https://ufli.education.ufl.edu/foundations/toolbox/",
+  "lessons": [
+    {
+      "lesson": "1",
+      "concept": "a /ă/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1zmV5rkm8ISqmgnvSrkgh0cI1iMyGzRQX/copy",
+        "decodablePassage": null,
+        "homePractice": null,
+        "rollAndRead": null
+      }
+    },
+    {
+      "lesson": "2",
+      "concept": "m /m/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1iVxaGXjb39Uh-pkXlcSD8L8wsFVMqmnE/copy",
+        "decodablePassage": null,
+        "homePractice": null,
+        "rollAndRead": null
+      }
+    },
+    {
+      "lesson": "3",
+      "concept": "s /s/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/12pPWTXM71gkDYHEIz8felxAYoMpYSyGs/copy",
+        "decodablePassage": null,
+        "homePractice": null,
+        "rollAndRead": null
+      }
+    },
+    {
+      "lesson": "4",
+      "concept": "t /t/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1o60t0GcLDdCD10C1_69P77PPcpbZ6754/copy",
+        "decodablePassage": null,
+        "homePractice": null,
+        "rollAndRead": null
+      }
+    },
+    {
+      "lesson": "5",
+      "concept": "VC/CVC",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1SHXXshV-XI9p68kRmgX4RbVK_IY0yV-t/copy",
+        "decodablePassage": null,
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/5_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": null
+      }
+    },
+    {
+      "lesson": "6",
+      "concept": "p /p/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/12n_7iBkA07TR2vba956e-aUvvG8KPlqQ/copy",
+        "decodablePassage": null,
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/6_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": null
+      }
+    },
+    {
+      "lesson": "7",
+      "concept": "f /f/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1kK98QTxwoXEkrpWfCdR5F4d2ebaLyFyk/copy",
+        "decodablePassage": null,
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/7_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": null
+      }
+    },
+    {
+      "lesson": "8",
+      "concept": "i /ĭ/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1f6_UaqkWlUWFr5F9n-rJ47iDHqyOK5ns/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/8_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/8_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": null
+      }
+    },
+    {
+      "lesson": "9",
+      "concept": "n /n/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1tofcjirDW_q2fysSr2iNlqBbSQye9Q-2/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/9_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/9_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": null
+      }
+    },
+    {
+      "lesson": "10",
+      "concept": "CVC Practice (a, i)",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1WqQJvD4IX8AgitnIaKVOfal_mOPntj1H/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/10_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/10_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": null
+      }
+    },
+    {
+      "lesson": "11",
+      "concept": "Nasalized A (an, am)",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1ri4EgPlR9PTafEon99NwJFd7_hUsz9YF/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/11_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/11_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": null
+      }
+    },
+    {
+      "lesson": "12",
+      "concept": "o /ŏ/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1hKX9Ey2FeOunA8bTI_DjvdIMWi6VyRrj/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/12_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/12_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": null
+      }
+    },
+    {
+      "lesson": "13",
+      "concept": "d /d/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1uRQ7YM4K09BlwG_UKyaN9diQTnCDeSLf/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2023/12/13_Decodable-UFLI-Foundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/13_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/13_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "14",
+      "concept": "c /k/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/14aXeoZAC8uBU5KPWJuDn5_-o1Q5016Xf/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/14_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/14_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/14_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "15",
+      "concept": "u /ŭ/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1_Poc6Lu69UZ_mg1p87HCObFzcN9glZzA/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/15_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/15_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/15_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "16",
+      "concept": "g /g/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1gYbwHBN4BoN_NEiaT1zFiyWnlhz7sTZ9/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/16_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/16_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/16_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "17",
+      "concept": "b /b/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1KTQr3cw9UiUTJlXrVwn5fuFfn5s_AvTj/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/17_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/17_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/17_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "18",
+      "concept": "e /ĕ/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1b3vOc1c1b37JihSl_j8IFG0cgxfgVOrt/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/18_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/18_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/18_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "19",
+      "concept": "Short Vowel Review (all)",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/12LCaZaOyD8YENtj0Mn8bMf6yRySKWJtB/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/19_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/19_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/19_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "20",
+      "concept": "-s /s/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1Pk1Dalt2yR_k1_XzqNEFZNe5mGi5OxDA/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/20_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/20_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/20_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "21",
+      "concept": "s /z/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1g1YRnu8pRfZ7P-Wv9wotfW9GM5PkGzec/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/21_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/21_HomePractice_UFLI-Foundations-1.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/21_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "22",
+      "concept": "k /k/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1cujpe5DSZdSRYMb3aHSgnYa2g_FQvZAt/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2023/12/22_Decodable_UFLIFoundations-k.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/22_HomePractice_UFLI-Foundations-1.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/22_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "23",
+      "concept": "h /h/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1KP6Pmn2gUU9poL_t8mEhwelHYT_h50Eu/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/23_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/23_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/23_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "24",
+      "concept": "r /r/ Part 1",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/13tHphSwLnAlr5qrFAToJVHRql0BB4VPR/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/24_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/24_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/24_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "25",
+      "concept": "r /r/ Part 2",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1eW16QeadAVpX5zfFzPoZOW1Zm4_C674-/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/25_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/25_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/25-_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "26",
+      "concept": "l /l/ Part 1",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1i98kVvwSX45p-MVRO_J9njEXN40Ymxmt/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/26_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/26_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/26_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "27",
+      "concept": "l /l/ Part 2",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1lvnW_y_XSejGanwZ9OpbebcAaabU9DzQ/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/27_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/27_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/27_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "28",
+      "concept": "w /w/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1zLEuf3uUO4Rluipk8hNVqsU19sx0KH9W/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2024/02/28_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/28_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/28_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "29",
+      "concept": "j /j/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1th_eBU5A-t6DeubjPLQPffoKRda-8bQE/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/29_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/29_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/29_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "30",
+      "concept": "y /y/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1z4F-azlFHA8WyUeLfhIfeLgIqced0tNU/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/30_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/30_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/30_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "31",
+      "concept": "x /ks/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1yHwJrpxaagxkAkd2U6X7n1oRU3GgwIUe/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/31_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/31_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/31_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "32",
+      "concept": "qu /kw/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1Xs8ag9Om1Q4lHnIWQVXtRmXYWuw5YnlZ/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/32_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/32_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/32_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "33",
+      "concept": "v /v/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1uvXTBEb71BiyZDcSG4DG1SsGL_CiL27q/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/33_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/33_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/33_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "34",
+      "concept": "z /z/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/1-34/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1DXKJtQikc-3FY2N3w02fbeFbOqQ262K_/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/34_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/34_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/34_RollRead_UFLIFoundations.pdf"
+      }
+    },
+    {
+      "lesson": "35a",
+      "concept": "Short A Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1zfjNKxbGcNnaP02a0mJjo53RjK6Ao-Rq/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/35a_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/35a_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/35a_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "35b",
+      "concept": "Nasalized A Review (an, am)",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1l8dGsOrjnsoSoD5sUTQMuz4fg7T9SoOn/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/35b_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/35b_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/35b_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "35c",
+      "concept": "Short A Advanced Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1DRjYFIGX99tNY_aAZ6q3HgIPEHsK0Fs1/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/35c_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/35c_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/35c_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "36a",
+      "concept": "Short I Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1mi8IViNaFZkHDL_ChTqnLdZMROPGp61T/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/36a_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/36a_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/36a_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "36b",
+      "concept": "Short I Advanced Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1mVphtsWC5FkvWkTaknayJg0eet1n92Yy/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/36b_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/36b_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/36b_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "37a",
+      "concept": "Short O Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1FPjvO89FETcOyvzDzR5ASeTaZi9Z3bH4/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/37a_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/37a_HomePractice_UFLI-Foundations-1.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/37a_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "37b",
+      "concept": "Short O Advanced Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1jD-a9B1_ASYIK8Iiqd9r-ksCNpCDfa7J/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/37b_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/37b_HomePractice_UFLI-Foundations-1.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/37b_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "38a",
+      "concept": "Short A, I, O Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1HC6G0_eskCyxlmtcYBGY7gvU95WHLeMY/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/38a_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/38a_HomePractice_UFLI-Foundations-1.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/38a_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "38b",
+      "concept": "Short A, I, O Advanced Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1QoPmS0hDp84A1bYefWkWTjfepsRd4uuv/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/38b_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/38b_HomePractice_UFLI-Foundations-1.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/38b_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "39a",
+      "concept": "Short U Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1dl-epbQzbiw8Mr8MEF2XsSjwr3Qyxlyc/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/39a_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/39a_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/39a_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "39b",
+      "concept": "Short U Advanced Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1kWzzEI0zKmIUhJNj2vTEnrBr5NUn_Btd/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/39b_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/39b_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/39b_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "40a",
+      "concept": "Short E Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/11P9ueZPQbf42n5jCGuYNhOlgqC_3mp1Q/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/40a_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/40a_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/40a_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "40b",
+      "concept": "Short E Advanced Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/19khkIPCcxlVfqG2nUsyYmeIyXS81H8aa/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/40b_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/40b_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/40b_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "41a",
+      "concept": "Short Vowel Review (all)",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1sC3vUCe5Uyd833fWLN2lnULQKriHu0RA/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/41a_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/41a_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/41a_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "41b",
+      "concept": "Short Vowel Review (all)",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1WnGXZOkYED737Nw-nkdjjtb3QKpnNMXZ/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/41b_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/41b_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/41b_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "41c",
+      "concept": "Short Vowel Review (all)",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/35-41",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1E2C0Gswg_IXPJWAytZoFCuXvqAlu-HrR/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2023/12/41c_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/41c_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/41c_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "42",
+      "concept": "FLSZ Spelling Rule",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/42-53",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1emvDtLtio_33a2k74V5c2rT_zNt3Gl77/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/42_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/42_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/42_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "43",
+      "concept": "-all, -oll, -ull",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/42-53",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1ISsYtmXog6pX9Kh20uH9XoeE9WXHfFmu/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/43_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/43_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/43_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "44",
+      "concept": "ck /k/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/42-53",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/11Skndp4X9gh9q40XLQV_Zu_tIcgwSVey/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2023/08/44_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/44_HomePractice_UFLI-Foundations2.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/44_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "45",
+      "concept": "sh /sh/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/42-53",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1NeTokqvg3V7-fNYOtu-M0MbZsXtk7TRI/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/45_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/45_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/45_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "46",
+      "concept": "th /th/ (voiced)",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/42-53",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/16_IAKi5LnJVztBDGd1XTAPkH3H1y1m0n/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2023/08/46_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/46_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/46_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "47",
+      "concept": "th /th/ (unvoiced)",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/42-53",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1TJ4WLvRb9RLZ8hrzhH21Ys7E4Uqo_x2f/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2023/08/47_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/47_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/47_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "48",
+      "concept": "ch /ch/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/42-53",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1JykUMGdzg4Xni4ZMOD2rLI3wKXHs6EiR/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/48_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/48_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/48_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "49",
+      "concept": "Digraphs Review 1",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/42-53",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1GZb2ce4xGKqkkAL94umTykFvCJkWIWZ5/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/49_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2023/09/49_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/49_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "50",
+      "concept": "wh /w/, ph /f/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/42-53",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/14A25jcNv5nulUOR3rPGmDGIwKdVKj8l2/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/50_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/50_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/50_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "51",
+      "concept": "ng /ŋ/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/42-53",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/14xVgOrt861UDtZehhXPv5fCQ17nTXFvv/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/51_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/51_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/51_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "52",
+      "concept": "nk /ŋk/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/42-53",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1fD_tkbcgLXVIQLuvjeCo1yHbEHjILu4u/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/52_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/52_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/52_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "53",
+      "concept": "Digraphs Review 2",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/42-53",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/10OOUE9DUltWf5JrDEyZCX44zm1Laur9Y/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/53_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/53_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/07/53_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "54",
+      "concept": "a_e /ā/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/54-62/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1-1B16leO4vhQDuBPH4pfH2TbJG-M7kMm/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2023/08/54_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/54_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/54_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "55",
+      "concept": "i_e /ī/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/54-62/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1bJDOVGsKTRJV4wFc4qHj5SvA-fvqRVEc/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/55_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/55_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/55_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "56",
+      "concept": "o_e /ō/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/54-62/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1Tzqh6eKz9cjZNO4IzHgjwAq0Mh8KU97O/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/56_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/56_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/56_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "57",
+      "concept": "VCe review 1; e_e /ē/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/54-62/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1gQuocEueYgUcmG4MnqUbgTbDx1807OQy/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/57_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/57_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/57_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "58",
+      "concept": "u_e /ū/, /yū/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/54-62/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/17KMR1P8IeG42BsWk06ZTiS2LHOZ2W8CK/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/58_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/58_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/58_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "59",
+      "concept": "VCe review 2",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/54-62/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1FzFbJM95n1QAjL0-miLO1I_HtPlppb0J/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/59-_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/59_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/59_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "60",
+      "concept": "_ce /s/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/54-62/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/12b-7U2-HCp7G3Q63NBXWxId71NnQxs-j/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/60-_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/60_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/60_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "61",
+      "concept": "_ge /j/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/54-62/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1FISn-gWSCfTiq-hNm8Ix1F18yHkvyZqe/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/61_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/61_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/61_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "62",
+      "concept": "VCe review 3; Exceptions",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/54-62/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/11TnAdDCBRvHK1hpBlgnKfsPuo5StFYZh/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/62_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/62_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/62_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "63",
+      "concept": "-es",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/63-68/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1mh1dOrwB-XsvVORfiaRomYONE7f3zgoj/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/63_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/63_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/63_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "64",
+      "concept": "-ed",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/63-68/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1YxmeyJdDX1dj5qBWWTCRmobBq-rvb40w/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/64_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/64_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2023/12/64_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "65",
+      "concept": "-ing",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/63-68/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1VJFNA-kwnAcSmyWMUeDreCrgE8ViQMTO/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/65_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/65_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/65_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "66",
+      "concept": "Syllables",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/63-68/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1vGxzj_M2_25nzNIPnj412lkL-eYX7rVE/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/66_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/66_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/66_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "67a",
+      "concept": "Compound Words",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/63-68/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1YjTRLPaZSkw5sFSojVwZO_zcfd4FfTOn/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2023/08/67a_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/67a_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/67a_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "67b",
+      "concept": "Closed/Closed",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/63-68/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1uWacXgz65QG6h8lr09yB0fr9a0vBRhlj/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/67b_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/67b_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/67b_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "68",
+      "concept": "Open and Closed",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/63-68/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1y5rtxRphFTSGYA5HhnvTZFFhNUCLWqLh/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/68_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/68_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/68_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "69",
+      "concept": "tch /ch/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/69-76/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1vaBuxVJnsz5k8vWNDb8sHum4aYorRwF_/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/69_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/69_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/69_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "70",
+      "concept": "dge /j/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/69-76/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1Ms85V4hzpzuklSz5ohQfYQeVEHN4SfLy/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/70_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/70_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/70_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "71",
+      "concept": "tch, dge Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/69-76/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1ryvVF45INLT2-5hRAwYsJXdya6Q4RqKw/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2023/08/71_Decodable_UFLIFoundations-1.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/71_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/71_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "72",
+      "concept": "Long VCC: -ild, -old, -ind, -olt, -ost",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/69-76/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1a10Fe5EjiaMvE4bf5uprc4NgSbwi8PDV/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/72_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/72_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/72_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "73",
+      "concept": "y /ī/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/69-76/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1nI2sPYrKZCbUBm3wuSuM2eHSHB5ymTrH/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/73_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/73_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/73_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "74",
+      "concept": "y /ē/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/69-76/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1bCEov5xjkRqZS4MYGYV7Khnwab5q30rU/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/74_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/74_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/74_RollRead_UFLI-Foundations-1.pdf"
+      }
+    },
+    {
+      "lesson": "75",
+      "concept": "-le",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/69-76/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1QEfraiRC_ofQmrFweyTMaX-GRrxXrkZ0/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/75_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/75_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/75_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "76",
+      "concept": "Ending Patterns Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/69-76/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1ODC1-jfrLt9a15Qtbi0M8unEnvLf0rll/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2023/08/76_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/76_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/76_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "77",
+      "concept": "ar /ar/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/77-83/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1Uqf2XfYDjXHtdcaW7IAza7DHRbDYzt4_/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/77_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/77_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/77_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "78",
+      "concept": "or /or/, ore /or/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/77-83/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1Vyk-E2P9jAl1i-BOaLnxIu5DyE7bbiXK/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/78_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/78_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/78_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "79",
+      "concept": "ar, or, ore Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/77-83/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1MQPhdQXiXVhbuydmfMEG52iYbYz90pxx/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/79_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/79_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/79_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "80",
+      "concept": "er /er/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/77-83/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/13GMKRVBaEOFeL8Ntn6I7omN4gBengDcy/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/80_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/80_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/80_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "81",
+      "concept": "ir /er/, ur /er/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/77-83/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/12BqSE_BSTd7mgyJJB-wohqcSzL7n_C98/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/81_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/81_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/81_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "82",
+      "concept": "Spelling /er/: er, ir, ur, w + or",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/77-83/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1HFzmP1xT6lr6Uefum-pGf_9nJOLLNUiQ/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/82_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/82_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/82_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "83",
+      "concept": "R-Controlled Vowels Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/77-83/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1KpuoWl-70eL4PtF5XAcmq5dA6atAbwGU/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/83_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/83_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/83_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "84",
+      "concept": "ai /ā/, ay /ā/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/84-88/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1hHlSAkg4zklScm7gKiEEy4nDGVuNGmKA/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/84_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/84_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/84_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "85",
+      "concept": "ee /ē/, ea /ē/, ey /ē/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/84-88/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1UbDuBKivXlMinCj8hoklFQiDd2AAQ-tG/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/85_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/85_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/85_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "86",
+      "concept": "oa /ō/, ow /ō/, oe /ō/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/84-88/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1slaGb1BwfAuGD0LfnpvouyuOFTBhoOJ8/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/86_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/86_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/86_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "87",
+      "concept": "ie /ī/, igh /ī/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/84-88/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1hErtcYLvyHWKE2j40HlVN9HugcWx_CpY/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/87_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/87_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/87_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "88",
+      "concept": "Vowel Teams Review 1",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/84-88/",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1xeeg7JF0p1XiRBNpQRbeNHHmZbwAtQGP/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/88_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/88_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/88_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "89",
+      "concept": "u /oo/, oo /oo/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/89-94",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1cIum3IaqZBbYKcolhWjrLrtoD90oY47f/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/89_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/89_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/89_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "90",
+      "concept": "oo /ū/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/89-94",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1RuNHEPPL5fRQR8UkG1xdEM0HZDhHq0Di/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/90_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/90_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/90_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "91",
+      "concept": "ew /ū/, ui /ū/, ue /ū/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/89-94",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1bfHAmgRIo4-d0sUmgT47ZIdN5vKzbYrV/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/91_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/91_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/91_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "92",
+      "concept": "Vowel Teams Review 2",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/89-94",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/19O65o-IFfjOtSBn9EgPIWkNxtlmdaWn8/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/92_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/92_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/92_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "93",
+      "concept": "au /aw/, aw /aw/, augh /aw/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/89-94",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/10wl4F906GCGDRtyLCCP9FBI4M4FIJP8b/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/93_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/93_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/93_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "94",
+      "concept": "ea /ĕ/, a /ŏ/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/89-94",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/14WvUpe67vQxI94IvJ87-Jchrb5lyVasE/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/94_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/94_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/94_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "95",
+      "concept": "oi /oi/, oy /oi/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/95-98",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1nBdXnC-jwFShBach-vNavFCr3_h-dulI/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/95_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2023/09/95_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/95_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "96",
+      "concept": "ou /ow/, ow /ow/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/95-98",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1jQM6fiuuuqy7nB8kRAWWK9crn4scuqvt/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/96_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/96_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/96_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "97",
+      "concept": "Vowel Teams and Diphthongs Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/95-98",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/17FU4TYkEV_JFieQuAZd6yl9NBBcmQtb_/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/97_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/97_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/97_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "98",
+      "concept": "kn /n/, wr /r/, mb /m/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/95-98",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1gE0fnYhcs3DkFJYUWmoeHUUNEfceTuBV/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/98_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/98_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/98_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "99",
+      "concept": "Suffixes; -s/-es",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/99-106",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1uUvgV24CI-gr7pqfhDJmOeizaBSFjuxY/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/99_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/99_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/99_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "100",
+      "concept": "-er, -est",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/99-106",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1Cu_aBrD7YpPOgGp3iMJn1StjHrnmcPlu/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/100_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/100_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/100_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "101",
+      "concept": "-ly",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/99-106",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1gAbsAPyEPCqNGBsuvKMokGN-E7ewDTTP/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/101_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/101_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/101_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "102",
+      "concept": "-less, -ful",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/99-106",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/191mjgm3v7_QOxuV4YOoxN6cUrePBqcTP/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/102_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/102_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/102_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "103",
+      "concept": "Prefixes; un-",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/99-106",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1Bg2rCa7YwnvBOBQq-QK52kO88QGElC5s/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/103_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/103_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/103_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "104",
+      "concept": "pre-, re-",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/99-106",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1j35id2nt3pqANRvK9MxUw6pBC7MwBsSl/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/104_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/104_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/104_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "105",
+      "concept": "dis-",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/99-106",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1BvYbIWsHgBzGl19Yz6TDLNgq1JY191Fp/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/105_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/105_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/105_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "106",
+      "concept": "Affixes Review",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/99-106",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1ngrPbgBRLR_0Q3SQPPSGgdtuBlB4oTwX/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/106_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/106_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/106_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "107",
+      "concept": "Doubling Rule: -ed, -ing",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/107-110",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1YxI7hLkvGgV0_Im1c6d4IxoBgo8so6um/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/107_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/107_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/107_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "108",
+      "concept": "Doubling Rule: -er, -est",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/107-110",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/13Yhck3vaGVwhG2L15M7K9oYJ1eHWKabB/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/108_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/108_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/108_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "109",
+      "concept": "Drop E Rule",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/107-110",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1z_RICkhWrLy2cSQyALHF6ewOZrWb4iYU/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/109_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/109_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/109_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "110",
+      "concept": "Y to I Rule",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/107-110",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1RvR5AXKqAHgGV389007t9QNti-YayDJi/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/110_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/110_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/110_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "111",
+      "concept": "ar /er/, or /er/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/111-118",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1Yw9LZvCa3X3LVELrUShDWsdD2C5ZA4qv/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/111_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/111_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/111_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "112",
+      "concept": "air /air/, are /air/, ear /air/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/111-118",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1Ry7NShCvoNGovlzlFW5GFH0Blk5lEeqy/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/112_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/112_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/112_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "113",
+      "concept": "ear /ear/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/111-118",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1ckO2KsNTeEz46nQqKyA_U7tI5z936G2E/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/113_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/113_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/113_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "114",
+      "concept": "ei /ā/, eigh /ā/, ey /ā/, ea /ā/, aigh /ā/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/111-118",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1WteUo8rTCukAa-R0osBc9HMhQ_Manv_l/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/114_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/114_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/114_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "115",
+      "concept": "ew /yū/, eu /yū/, ue /yū/, ou /ū/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/111-118",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/157DZdZrtQlhlmUTXThydv1AYvkDSpy_d/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/115_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/115_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/115_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "116",
+      "concept": "ough /aw/, ough /ō/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/111-118",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1QPP4lbza3CIVqNZFsVkA_SO6Qo3HO8Qv/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/116_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/116_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/116_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "117",
+      "concept": "Signal Vowels: c /s/, g /j/",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/111-118",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1JU5Y8iD_psDcNeK2uLHYXiMBiCwcLbnv/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/117_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/117_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/117_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "118",
+      "concept": "ch /sh/, ch /k/, gn /n/, gh /g/, silent t",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/111-118",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1AwYziUSRjYpxmzm6iwyoE0paUI-QCANC/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/09/118_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/118_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/118_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "119",
+      "concept": "-sion, -tion",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/119-128",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1Pva0CGUdCyEx837cyF8FC2dlXnzeCCze/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/119_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/119_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/119_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "120",
+      "concept": "-ture",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/119-128",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1rPdLpxkK1a6-oKc4S3ZiCqv8kCZ6TQ16/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/120_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/120_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/120_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "121",
+      "concept": "-er, -or, -ist",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/119-128",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1Jv-txQBQqHZpyN3YckmZ5Om2D-MkPWtO/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/121_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/121_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/121_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "122",
+      "concept": "-ish",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/119-128",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/17qYvTdhKRO1c7-CTmLEI_bn7jj46AmmR/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/122_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/122_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/122_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "123",
+      "concept": "-y",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/119-128",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1Nj9acmpr2KYEJo7i3TNpzOfZIYZfsJYY/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/123_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/123_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/123_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "124",
+      "concept": "-ness",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/119-128",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1hkTRYKOrwlJLbmT0WN_QvPXEUBZgvqOP/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/124_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/124_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/124_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "125",
+      "concept": "-ment",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/119-128",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/12e8OEFEBDzLcqP7dwH89d5DUxGBqZGUd/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/125_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/125_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/125_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "126",
+      "concept": "-able, -ible",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/119-128",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1mDufjmcAgflUPAq72DASzo52pxo8c61_/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/126_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/126_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/126_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "127",
+      "concept": "bi-, tri-, uni-",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/119-128",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1RLGiyCmR_O4BHtVVXF-iNihVtn20xJWw/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/127_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/127_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/127_RollRead_UFLI-Foundations.pdf"
+      }
+    },
+    {
+      "lesson": "128",
+      "concept": "Affixes Review 2",
+      "sourceUrl": "https://ufli.education.ufl.edu/foundations/toolbox/119-128",
+      "resources": {
+        "googleSlides": "https://docs.google.com/presentation/d/1H-aXavEox5ToBiTfT-bvlQZ1_4sxSrnN/copy",
+        "decodablePassage": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/128_Decodable_UFLIFoundations.pdf",
+        "homePractice": "https://ufli.education.ufl.edu/wp-content/uploads/2022/11/128_HomePractice_UFLI-Foundations.pdf",
+        "rollAndRead": "https://ufli.education.ufl.edu/wp-content/uploads/2022/08/128_RollRead_UFLI-Foundations.pdf"
+      }
+    }
+  ]
+}
