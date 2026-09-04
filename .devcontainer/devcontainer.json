@@ -1,0 +1,26 @@
+{
+  "name": "pineridge",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+        "ghcr.io/devcontainers-extra/features/mise:1": {}
+  },
+  "remoteEnv": {
+        "PATH": "/home/vscode/.local/share/mise/shims:/home/vscode/.venv/bin:${containerEnv:PATH}"
+  },
+  "mounts": [
+    "source=home-pineridge,target=/home/vscode,type=volume"
+  ],
+  "postCreateCommand": "sudo chown vscode:vscode /home/vscode/.cache && mise trust .tool-versions && mise install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "openai.chatgpt",
+        "esbenp.prettier-vscode",
+        "github.vscode-github-actions",
+        "tamasfe.even-better-toml",
+        "svelte.svelte-vscode",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  }
+}
