@@ -74,7 +74,7 @@
       <section class="recommendations" aria-labelledby="recommendations-title"><h2 id="recommendations-title">Recommendations</h2>
         {#if run.completionReason === "all-passed"}
           <div class="outcome"><h3>No UFLI Foundations Starting Point was identified.</h3>
-            <p>All checkpoints were passed. Review UFLI’s official <a href={fluencyGuideUrl} target="_blank" rel="noreferrer">Supporting the Development of Reading Fluency guide</a>.</p><p class="destination">{fluencyGuideUrl}</p></div>
+            <p>The adaptive samples did not identify a Foundations starting point. Review UFLI’s official <a href={fluencyGuideUrl} target="_blank" rel="noreferrer">Supporting the Development of Reading Fluency guide</a>.</p><p class="destination">{fluencyGuideUrl}</p></div>
         {:else}
           {#each tutorRecommendations as recommendation}
             <section class="recommendation"><h3>{recommendation.isStartingPoint ? "★ Starting Point" : recommendation.kind === "review" ? "Suggested review" : "Additional gap"}: Lesson {recommendation.lesson}</h3><p>{recommendation.concept}</p>

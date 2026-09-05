@@ -57,13 +57,92 @@ const start = () =>
 const judge = (run: AssessmentRun, correct: boolean) =>
   transitionAssessment(run, { type: "judge", correct });
 
+const adaptiveDefinition: AssessmentDefinition = {
+  bands: Array.from({ length: 11 }, (_, index) => ({
+    id: `band-${index}`,
+    label: `Band ${index}`,
+    checkpointGroups: [
+      words(`b${index}a`),
+      words(`b${index}b`),
+      words(`b${index}c`),
+      words(`b${index}d`),
+    ],
+    probes: [
+      {
+        id: `probe-${index}`,
+        lesson: `${index + 1}`,
+        concept: `Concept ${index}`,
+        words: words(`p${index}`),
+      },
+    ],
+  })),
+};
+
+const passSample = (run: AssessmentRun) => {
+  for (let index = 0; index < 4; index += 1) run = judge(run, true);
+  return run;
+};
+
+const failSample = (run: AssessmentRun) => judge(judge(run, false), false);
+
 describe("assessment run", () => {
-  it("advances to the next Checkpoint after 18 of 20 correct", () => {
+  it("uses midpoint jumps to reach the highest band", () => {
+    let run = transitionAssessment(createAssessmentRun(adaptiveDefinition), {
+      type: "confirm",
+    });
+    const visited: number[] = [];
+
+    while (run.status === "active") {
+      visited.push(run.position.bandIndex);
+      run = passSample(run);
+    }
+
+    expect(visited).toEqual([0, 5, 8, 9, 10]);
+    expect(run.responses).toHaveLength(20);
+    expect(run.completionReason).toBe("all-passed");
+  });
+
+  it("bisects downward until it brackets the focused band", () => {
+    let run = transitionAssessment(createAssessmentRun(adaptiveDefinition), {
+      type: "confirm",
+    });
+
+    run = passSample(run); // 0 -> 5
+    run = failSample(run); // 5 -> 2
+    expect(run.position.bandIndex).toBe(2);
+    run = passSample(run); // 2 -> 3
+    run = passSample(run); // 3 -> 4
+    run = passSample(run); // adjacent boundary -> focus 5
+
+    expect(run.position).toMatchObject({
+      bandIndex: 5,
+      stage: "focus",
+      probeIndex: 0,
+      wordIndex: 0,
+    });
+  });
+
+  it("undoes the judgment that caused an adaptive jump", () => {
+    let run = transitionAssessment(createAssessmentRun(adaptiveDefinition), {
+      type: "confirm",
+    });
+    run = passSample(run);
+    expect(run.position.bandIndex).toBe(5);
+
+    run = transitionAssessment(run, { type: "undo" });
+
+    expect(run.position).toMatchObject({ bandIndex: 0, wordIndex: 3 });
+    expect(run.responses).toHaveLength(3);
+    expect(run.searchBounds).toEqual({
+      lastPassedBandIndex: null,
+      firstFailedBandIndex: null,
+    });
+  });
+
+  it("starts at the basic band, then jumps to the midpoint after four correct", () => {
     let run = start();
 
-    for (let index = 0; index < 20; index += 1) {
-      run = judge(run, index >= 2);
-    }
+    for (let index = 0; index < 4; index += 1) run = judge(run, true);
 
     expect(run.status).toBe("active");
     expect(run.position).toMatchObject({
@@ -72,13 +151,12 @@ describe("assessment run", () => {
       groupIndex: 0,
       wordIndex: 0,
     });
-    expect(run.responses).toHaveLength(20);
+    expect(run.responses).toHaveLength(4);
     expect(run.demonstratedGaps).toEqual([]);
   });
 
-  it("switches to focused probing after three misses in one Checkpoint group", () => {
+  it("switches to focused probing after two misses in the first band", () => {
     let run = start();
-    run = judge(run, false);
     run = judge(run, false);
     run = judge(run, false);
 
@@ -91,19 +169,9 @@ describe("assessment run", () => {
     });
   });
 
-  it("switches to focused probing after finishing a Checkpoint at 17 of 20", () => {
-    let run = start();
-    for (let index = 0; index < 20; index += 1) {
-      run = judge(run, ![0, 5, 10].includes(index));
-    }
-
-    expect(run.status).toBe("active");
-    expect(run.position).toMatchObject({ stage: "focus", probeIndex: 0 });
-  });
-
   it("records a Demonstrated Gap after two misses and continues the probe", () => {
     let run = start();
-    run = judge(judge(judge(run, false), false), false);
+    run = judge(judge(run, false), false);
     run = judge(run, false);
     run = judge(run, false);
 
@@ -121,7 +189,7 @@ describe("assessment run", () => {
 
   it("ends after a third miss in one Concept Probe", () => {
     let run = start();
-    run = judge(judge(judge(run, false), false), false);
+    run = judge(judge(run, false), false);
     run = judge(judge(judge(run, false), false), false);
 
     expect(run.status).toBe("complete");
@@ -131,7 +199,7 @@ describe("assessment run", () => {
 
   it("undoes a judgment that caused completion", () => {
     let run = start();
-    run = judge(judge(judge(run, false), false), false);
+    run = judge(judge(run, false), false);
     run = judge(judge(judge(run, false), false), false);
 
     run = transitionAssessment(run, { type: "undo" });
@@ -160,22 +228,22 @@ describe("assessment run", () => {
 
   it("undoes the judgment that switched a Checkpoint into focus", () => {
     let run = start();
-    run = judge(judge(judge(run, false), false), false);
+    run = judge(judge(run, false), false);
     expect(run.position.stage).toBe("focus");
 
     run = transitionAssessment(run, { type: "undo" });
     expect(run.status).toBe("active");
-    expect(run.responses).toHaveLength(2);
+    expect(run.responses).toHaveLength(1);
     expect(run.position).toMatchObject({
       stage: "checkpoint",
       groupIndex: 0,
-      wordIndex: 2,
+      wordIndex: 1,
     });
   });
 
   it("ends as soon as a third Demonstrated Gap is observed", () => {
     let run = start();
-    run = judge(judge(judge(run, false), false), false);
+    run = judge(judge(run, false), false);
 
     for (let probe = 0; probe < 2; probe += 1) {
       for (const correct of [false, false, true, true, true]) {
@@ -195,7 +263,7 @@ describe("assessment run", () => {
 
   it("finishes with no Starting Point when every Checkpoint passes", () => {
     let run = start();
-    for (let index = 0; index < 40; index += 1) run = judge(run, true);
+    while (run.status === "active") run = judge(run, true);
 
     expect(run.status).toBe("complete");
     expect(run.completionReason).toBe("all-passed");

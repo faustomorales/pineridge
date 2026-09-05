@@ -46,6 +46,10 @@ interface RunSnapshot {
   demonstratedGaps: DemonstratedGap[];
   completionReason: CompletionReason;
   printRequested: boolean;
+  searchBounds: {
+    lastPassedBandIndex: number | null;
+    firstFailedBandIndex: number | null;
+  };
 }
 
 export interface AssessmentRun extends RunSnapshot {
@@ -80,6 +84,10 @@ export function createAssessmentRun(
     demonstratedGaps: [],
     completionReason: null,
     printRequested: false,
+    searchBounds: {
+      lastPassedBandIndex: null,
+      firstFailedBandIndex: null,
+    },
     history: [],
   };
 }
@@ -112,19 +120,20 @@ function snapshot(run: AssessmentRun): RunSnapshot {
     demonstratedGaps: [...run.demonstratedGaps],
     completionReason: run.completionReason,
     printRequested: run.printRequested,
+    searchBounds: { ...run.searchBounds },
   };
 }
 
-function advanceToBand(run: AssessmentRun, bandIndex: number): AssessmentRun {
-  if (bandIndex >= run.definition.bands.length) {
-    return {
-      ...run,
-      status: "complete",
-      completionReason:
-        run.demonstratedGaps.length > 0 ? "needs-support" : "all-passed",
-    };
-  }
+function completeRun(run: AssessmentRun): AssessmentRun {
+  return {
+    ...run,
+    status: "complete",
+    completionReason:
+      run.demonstratedGaps.length > 0 ? "needs-support" : "all-passed",
+  };
+}
 
+function showCheckpoint(run: AssessmentRun, bandIndex: number): AssessmentRun {
   return {
     ...run,
     position: {
@@ -134,6 +143,69 @@ function advanceToBand(run: AssessmentRun, bandIndex: number): AssessmentRun {
       wordIndex: 0,
     },
   };
+}
+
+function routeAfterCheckpointPass(run: AssessmentRun): AssessmentRun {
+  const current = run.position.bandIndex;
+  const last = run.definition.bands.length - 1;
+  const upper = run.searchBounds.firstFailedBandIndex;
+  const passedRun = {
+    ...run,
+    searchBounds: {
+      ...run.searchBounds,
+      lastPassedBandIndex: current,
+    },
+  };
+
+  if (current === last) return completeRun(passedRun);
+
+  if (upper !== null) {
+    if (upper - current <= 1) {
+      return enterFocus({
+        ...passedRun,
+        position: { ...passedRun.position, bandIndex: upper },
+      });
+    }
+    return showCheckpoint(passedRun, Math.floor((current + upper) / 2));
+  }
+
+  return showCheckpoint(
+    passedRun,
+    Math.floor((current + last + 1) / 2),
+  );
+}
+
+function routeAfterCheckpointFail(run: AssessmentRun): AssessmentRun {
+  const current = run.position.bandIndex;
+  const lower = run.searchBounds.lastPassedBandIndex;
+  const failedRun = {
+    ...run,
+    searchBounds: {
+      ...run.searchBounds,
+      firstFailedBandIndex: current,
+    },
+  };
+
+  if (lower === null || current - lower <= 1) return enterFocus(failedRun);
+  return showCheckpoint(failedRun, Math.floor((lower + current) / 2));
+}
+
+function routeAfterSuccessfulFocus(run: AssessmentRun): AssessmentRun {
+  const current = run.position.bandIndex;
+  const last = run.definition.bands.length - 1;
+  const passedRun = {
+    ...run,
+    searchBounds: {
+      lastPassedBandIndex: current,
+      firstFailedBandIndex: null,
+    },
+  };
+
+  if (current === last) return completeRun(passedRun);
+  return showCheckpoint(
+    passedRun,
+    Math.floor((current + last + 1) / 2),
+  );
 }
 
 function advanceCheckpoint(run: AssessmentRun): AssessmentRun {
@@ -146,8 +218,10 @@ function advanceCheckpoint(run: AssessmentRun): AssessmentRun {
       response.groupId === `${band.id}-${run.position.groupIndex}`,
   );
   const groupMisses = groupResponses.filter((response) => !response.correct).length;
+  const groupCorrect = groupResponses.length - groupMisses;
 
-  if (groupMisses >= 3) return enterFocus(run);
+  if (groupMisses >= 2) return routeAfterCheckpointFail(run);
+  if (groupCorrect >= 4) return routeAfterCheckpointPass(run);
 
   if (run.position.wordIndex + 1 < group.length) {
     return {
@@ -156,31 +230,15 @@ function advanceCheckpoint(run: AssessmentRun): AssessmentRun {
     };
   }
 
-  if (run.position.groupIndex + 1 < band.checkpointGroups.length) {
-    return {
-      ...run,
-      position: {
-        ...run.position,
-        groupIndex: run.position.groupIndex + 1,
-        wordIndex: 0,
-      },
-    };
-  }
-
-  const checkpointResponses = run.responses.filter(
-    (response) =>
-      response.bandId === band.id && response.stage === "checkpoint",
-  );
-  const correct = checkpointResponses.filter((response) => response.correct).length;
-  return correct >= 18
-    ? advanceToBand(run, run.position.bandIndex + 1)
-    : enterFocus(run);
+  return groupCorrect >= 4
+    ? routeAfterCheckpointPass(run)
+    : routeAfterCheckpointFail(run);
 }
 
 function enterFocus(run: AssessmentRun): AssessmentRun {
   const band = run.definition.bands[run.position.bandIndex];
   if (band.probes.length === 0) {
-    return advanceToBand(run, run.position.bandIndex + 1);
+    return routeAfterSuccessfulFocus(run);
   }
 
   return {
@@ -243,7 +301,7 @@ function advanceFocus(run: AssessmentRun): AssessmentRun {
     };
   }
 
-  return advanceToBand(run, run.position.bandIndex + 1);
+  return routeAfterSuccessfulFocus(run);
 }
 
 function judge(run: AssessmentRun, correct: boolean): AssessmentRun {

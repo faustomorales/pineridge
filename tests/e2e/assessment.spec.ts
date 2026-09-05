@@ -13,7 +13,6 @@ test("tutor completes an early-stopped Assessment Run without student feedback",
 
   await page.keyboard.press("ArrowLeft");
   await page.keyboard.press("ArrowLeft");
-  await page.keyboard.press("ArrowLeft");
   await expect(page.getByText("am", { exact: true })).toBeVisible();
 
   await page.keyboard.press("ArrowLeft");
@@ -27,7 +26,7 @@ test("tutor completes an early-stopped Assessment Run without student feedback",
   await expect(page.getByText("Home Practice:")).toBeVisible();
   await expect(page.getByText("Unavailable").first()).toBeVisible();
   await expect(page.getByText("Incorrect").first()).toBeVisible();
-  await expect(page.locator(".response-group li")).toHaveCount(6);
+  await expect(page.locator(".response-group li")).toHaveCount(5);
 
   await page.emulateMedia({ media: "print" });
   await expect(page.getByRole("button", { name: /Print/ })).toBeHidden();
@@ -67,7 +66,7 @@ test("keyboard undo, ignored input, and reload do not retain a run", async ({ pa
   await expect(page.getByRole("button", { name: /begin/i })).toBeVisible();
 });
 
-test("passing every Checkpoint leads to fluency guidance", async ({ page }) => {
+test("passing every adaptive sample leads to fluency guidance", async ({ page }) => {
   await page.goto("/assessment/");
   await page.waitForLoadState("networkidle");
   await page.getByRole("button", { name: /begin/i }).click();
