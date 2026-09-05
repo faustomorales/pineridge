@@ -304,6 +304,25 @@ function advanceFocus(run: AssessmentRun): AssessmentRun {
   return routeAfterSuccessfulFocus(run);
 }
 
+function skipPreviouslyAdministeredWords(run: AssessmentRun): AssessmentRun {
+  let next = run;
+  const administered = new Set(
+    run.responses.map((response) => response.word.text.toLocaleLowerCase()),
+  );
+
+  while (next.status === "active") {
+    const word = currentWord(next);
+    if (!word || !administered.has(word.text.toLocaleLowerCase())) return next;
+
+    next =
+      next.position.stage === "checkpoint"
+        ? advanceCheckpoint(next)
+        : advanceFocus(next);
+  }
+
+  return next;
+}
+
 function judge(run: AssessmentRun, correct: boolean): AssessmentRun {
   const word = currentWord(run);
   if (!word) return run;
@@ -330,9 +349,11 @@ function judge(run: AssessmentRun, correct: boolean): AssessmentRun {
     history: [snapshot(run)],
   };
 
-  return run.position.stage === "checkpoint"
-    ? advanceCheckpoint(next)
-    : advanceFocus(next);
+  const advanced =
+    run.position.stage === "checkpoint"
+      ? advanceCheckpoint(next)
+      : advanceFocus(next);
+  return skipPreviouslyAdministeredWords(advanced);
 }
 
 export function transitionAssessment(
