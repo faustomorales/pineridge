@@ -64,6 +64,21 @@ test("phone swipe advances while the word screen remains neutral", async ({ page
   await expect(page.getByText(/correct|incorrect/i)).toHaveCount(0);
 });
 
+test("a prior UFLI placement starts at the nearest available concept probe", async ({ page }) => {
+  await page.goto("/assessment/");
+  await page.waitForLoadState("networkidle");
+  await page.getByLabel(/Most recent UFLI placement/).selectOption("53");
+  await page.getByRole("button", { name: /begin/i }).click();
+
+  await expect(page.getByText("cane", { exact: true })).toBeVisible();
+  await page.keyboard.press("ArrowLeft");
+  await page.keyboard.press("ArrowLeft");
+  await expect(page.getByRole("heading", { name: "Lesson 54" })).toBeVisible();
+
+  await page.getByRole("button", { name: "Show reasoning" }).click();
+  await expect(page.getByText(/Probing began near Lesson 53/)).toBeVisible();
+});
+
 test("keyboard undo, ignored input, and reload do not retain a run", async ({ page }) => {
   await page.goto("/assessment/");
   await page.waitForLoadState("networkidle");

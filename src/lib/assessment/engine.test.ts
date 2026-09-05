@@ -88,6 +88,23 @@ const passSample = (run: AssessmentRun) => {
 const failSample = (run: AssessmentRun) => judge(judge(run, false), false);
 
 describe("assessment run", () => {
+  it("uses a prior placement as a probe hint without adding evidence", () => {
+    const run = transitionAssessment(createAssessmentRun(definition), {
+      type: "confirm",
+      priorPlacementLesson: "8",
+    });
+
+    expect(run.position).toMatchObject({
+      bandIndex: 0,
+      stage: "focus",
+      probeIndex: 1,
+      wordIndex: 0,
+    });
+    expect(run.frontier).toMatchObject({ lowerProbeIndex: 0 });
+    expect(run.priorPlacementLesson).toBe("8");
+    expect(run.responses).toEqual([]);
+  });
+
   it("uses midpoint jumps to reach the highest band", () => {
     let run = transitionAssessment(createAssessmentRun(adaptiveDefinition), {
       type: "confirm",

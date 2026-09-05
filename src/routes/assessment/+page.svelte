@@ -10,7 +10,9 @@
     ["homePractice", "Home Practice"], ["rollAndRead", "Roll and Read"],
   ];
   const fluencyGuideUrl = "https://ufli.education.ufl.edu/wp-content/uploads/2024/05/UFLI-Fluency-Support-Guide.pdf";
+  const priorPlacementOptions = ["1", "35", "41", "53", "62", "68", "76", "83", "88", "94", "99", "119"];
   let run = createAssessmentRun(definition);
+  let priorPlacementLesson = "";
   let pointerStart: { x: number; y: number } | null = null;
   let copyStatus = "";
   let showReasoning = false;
@@ -20,7 +22,7 @@
   $: if (typeof window !== "undefined" && run.printRequested) { window.print(); send({ type: "printHandled" }); }
 
   function send(event: Parameters<typeof transitionAssessment>[1]) {
-    if (event.type === "reset") showReasoning = false;
+    if (event.type === "reset") { showReasoning = false; priorPlacementLesson = ""; }
     const next = transitionAssessment(run, event);
     run = next.status === "complete"
       ? transitionAssessment(next, { type: "reveal" })
@@ -40,6 +42,7 @@
   function cancelSwipe() { pointerStart = null; }
   async function copySequence() {
     const entries = run.responses.map((response) => `${response.word.text}-${response.correct ? "c" : "i"}`);
+    if (run.priorPlacementLesson) entries.unshift(`prior-${run.priorPlacementLesson}`);
     const recommendationLesson = tutorResult.demonstrated?.lesson ?? tutorResult.firstGap?.lesson ?? "none";
     entries.push(`rec-${recommendationLesson}`);
     if (tutorResult.firstGap && tutorResult.firstGap.lesson !== recommendationLesson) {
@@ -121,7 +124,11 @@
         <p>The screen stays neutral and does not show whether a response was correct.</p>
         <p>Press Backspace to undo the immediately previous judgment.</p>
       </div>
-      <button class="primary" onclick={() => send({ type: "confirm" })}>I understand — begin</button>
+      <label class="placement-field" for="prior-placement"><span>Most recent UFLI placement <small>Optional</small></span>
+        <select id="prior-placement" bind:value={priorPlacementLesson}><option value="">Start from the beginning</option>{#each priorPlacementOptions as lesson}<option value={lesson}>Lesson {lesson}</option>{/each}</select>
+        <small>This only chooses where probing begins; the student’s responses determine the recommendation.</small>
+      </label>
+      <button class="primary" onclick={() => send({ type: "confirm", priorPlacementLesson: priorPlacementLesson || undefined })}>I understand — begin</button>
       <p class="fine-print">Created locally to align with UFLI’s scope and sequence. This tool is not created or endorsed by UFLI, and its tutor-facing suggestion has not been validated as a formal placement.</p>
     </section>
   {:else if run.status === "active"}
@@ -155,7 +162,7 @@
       </section>
       {#if showReasoning}
         <section id="recommendation-path" class="reasoning no-print" aria-labelledby="reasoning-title">
-          <div class="reasoning-heading"><div><p class="eyebrow">Assessment path</p><h2 id="reasoning-title">How the recommendations were reached</h2></div><p>Each stop shows the words the tutor marked and how that evidence changed the adaptive search.</p></div>
+          <div class="reasoning-heading"><div><p class="eyebrow">Assessment path</p><h2 id="reasoning-title">How the recommendations were reached</h2></div><p>{run.priorPlacementLesson ? `Probing began near Lesson ${run.priorPlacementLesson} based on the optional prior placement. ` : ""}Each stop shows the words the tutor marked and how that evidence changed the adaptive search.</p></div>
           <ol class="reasoning-path">
             {#each reasoningSteps as step, index}
               <li class="reasoning-step">
@@ -191,7 +198,7 @@
   :global(body){margin:0;background:var(--color-primary-light);color:var(--color-primary-dark);font-family:var(--font-body)}main{min-height:100svh;padding:clamp(1rem,4vw,3rem);box-sizing:border-box}
   .panel,.results{width:min(100%,48rem);margin:clamp(1rem,8vh,5rem) auto;background:var(--color-paper);border:1px solid var(--color-muted);border-radius:1rem;box-shadow:0 1rem 3rem rgba(22,26,29,.07);padding:clamp(1.5rem,5vw,3.5rem);box-sizing:border-box}
   .eyebrow{margin:0 0 .5rem;color:var(--color-muted);font-size:.78rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(2rem,6vw,3.35rem);line-height:1.05;letter-spacing:-.035em}h2{font-size:1.5rem}h3{font-size:1.05rem}
-  .instructions{margin:2rem 0}.instructions p{line-height:1.55;margin:.65rem 0}button{border-radius:.55rem;padding:.8rem 1.05rem;font:inherit;font-weight:700;cursor:pointer}.primary{border:1px solid var(--color-primary-dark);background:var(--color-primary-dark);color:var(--color-paper)}.secondary{border:1px solid var(--color-muted);background:var(--color-paper);color:var(--color-primary-dark)}.fine-print,.notes{font-size:.78rem;line-height:1.5;color:var(--color-muted)}.fine-print{margin:2rem 0 0}
+  .instructions{margin:2rem 0}.instructions p{line-height:1.55;margin:.65rem 0}.placement-field{display:grid;gap:.45rem;margin:0 0 1.25rem;max-width:24rem;font-weight:750}.placement-field>span{display:flex;align-items:baseline;gap:.5rem}.placement-field small{color:var(--color-muted);font-size:.72rem;font-weight:500;line-height:1.4}.placement-field select{width:100%;border:1px solid var(--color-muted);border-radius:.55rem;background:var(--color-paper);color:var(--color-primary-dark);padding:.75rem;font:inherit}button{border-radius:.55rem;padding:.8rem 1.05rem;font:inherit;font-weight:700;cursor:pointer}.primary{border:1px solid var(--color-primary-dark);background:var(--color-primary-dark);color:var(--color-paper)}.secondary{border:1px solid var(--color-muted);background:var(--color-paper);color:var(--color-primary-dark)}.fine-print,.notes{font-size:.78rem;line-height:1.5;color:var(--color-muted)}.fine-print{margin:2rem 0 0}
   main.administration{padding:0;background:var(--color-paper);touch-action:pan-y;user-select:none}.word-stage{min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;place-items:center;padding:2rem;box-sizing:border-box}.progress{color:var(--color-muted);font-size:.82rem;letter-spacing:.04em}.word{align-self:center;margin:0;font-size:clamp(4rem,18vw,10rem);font-weight:600;line-height:1;text-align:center;letter-spacing:.01em}
   .results{width:min(100%,58rem);margin-top:1rem}.result-header{border-bottom:1px solid var(--color-muted);margin-bottom:2rem;padding-bottom:1.5rem}
   .recommendations{margin-bottom:2.5rem}.recommendation,.outcome{border:1px solid var(--color-muted);border-left:4px solid var(--color-ink);border-radius:.5rem;padding:1.15rem;margin:1rem 0}.recommendation p{margin-bottom:.75rem}.result-label{color:var(--color-muted);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.resources{display:flex;align-items:center;flex-wrap:wrap;gap:.55rem;margin-top:.9rem}.resource-chip{display:inline-flex;align-items:center;min-height:2rem;box-sizing:border-box;border:1px solid var(--color-muted);border-radius:99rem;padding:.35rem .75rem;background:var(--color-paper);font-size:.78rem;font-weight:750;line-height:1.15;color:var(--color-accent);text-decoration:none}.resource-chip[href]:hover{border-color:var(--color-accent);text-decoration:underline}.resource-chip.unavailable{background:var(--color-primary-light);border-color:transparent;color:var(--color-muted);opacity:.62}.resource-chip.toolbox{border-color:var(--color-accent)}a{color:var(--color-accent);text-underline-offset:.18em}.destination{display:none;overflow-wrap:anywhere}

@@ -46,6 +46,7 @@ interface RunSnapshot {
   demonstratedGaps: DemonstratedGap[];
   completionReason: CompletionReason;
   printRequested: boolean;
+  priorPlacementLesson: string | null;
   searchBounds: {
     lastPassedBandIndex: number | null;
     firstFailedBandIndex: number | null;
@@ -63,7 +64,7 @@ export interface AssessmentRun extends RunSnapshot {
 }
 
 export type AssessmentEvent =
-  | { type: "confirm" }
+  | { type: "confirm"; priorPlacementLesson?: string }
   | { type: "judge"; correct: boolean }
   | { type: "undo" }
   | { type: "reveal" }
@@ -89,6 +90,7 @@ export function createAssessmentRun(
     demonstratedGaps: [],
     completionReason: null,
     printRequested: false,
+    priorPlacementLesson: null,
     searchBounds: {
       lastPassedBandIndex: null,
       firstFailedBandIndex: null,
@@ -126,6 +128,7 @@ function snapshot(run: AssessmentRun): RunSnapshot {
     demonstratedGaps: [...run.demonstratedGaps],
     completionReason: run.completionReason,
     printRequested: run.printRequested,
+    priorPlacementLesson: run.priorPlacementLesson,
     searchBounds: { ...run.searchBounds },
     frontier: run.frontier ? { ...run.frontier } : null,
   };
@@ -406,6 +409,36 @@ export function transitionAssessment(
   if (event.type === "confirm" && run.status === "instructions") {
     if (run.definition.bands.length === 0) {
       return { ...run, status: "complete", completionReason: "all-passed" };
+    }
+    if (event.priorPlacementLesson) {
+      const probes = run.definition.bands.flatMap((band, bandIndex) =>
+        band.probes.map((probe, probeIndex) => ({ bandIndex, probeIndex, probe })),
+      );
+      const requestedOrder = Number.parseFloat(event.priorPlacementLesson);
+      const globalProbeIndex = probes.findIndex(
+        ({ probe }) => Number.parseFloat(probe.lesson) >= requestedOrder,
+      );
+      const selectedIndex = globalProbeIndex < 0 ? probes.length - 1 : globalProbeIndex;
+      const selected = probes[selectedIndex];
+      if (selected) {
+        return {
+          ...run,
+          status: "active",
+          priorPlacementLesson: event.priorPlacementLesson,
+          position: {
+            bandIndex: selected.bandIndex,
+            stage: "focus",
+            groupIndex: 0,
+            probeIndex: selected.probeIndex,
+            wordIndex: 0,
+          },
+          frontier: {
+            lowerProbeIndex: selectedIndex - 1,
+            upperProbeIndex: probes.length - 1,
+            stride: 2,
+          },
+        };
+      }
     }
     return { ...run, status: "active" };
   }

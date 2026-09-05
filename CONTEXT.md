@@ -36,6 +36,10 @@ _Avoid_: First unmastered lesson, diagnosis
 The neighborhood between the Most Advanced Demonstrated lesson and the next Concept Probe that the student cannot pass with two correct responses. Successful nearby probes move the frontier and increase the next jump; a failed jump narrows the search back toward the frontier.
 _Avoid_: Fixed placement range, distant failed band
 
+**Prior Placement Hint**:
+An optional starting lesson reported by a previous official UFLI Foundations Intervention Placement Test. It selects the first Concept Probe in the new Assessment Run but does not count as Lesson Evidence or determine the Recommendation.
+_Avoid_: Prior mastery, imported score
+
 **Recommendation**:
 A Starting Point or additional Demonstrated Gap paired with links to available official instructional resources.
 _Avoid_: Prescription
