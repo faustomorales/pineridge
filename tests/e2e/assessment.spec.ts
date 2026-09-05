@@ -26,6 +26,17 @@ test("tutor completes an early-stopped Assessment Run without student feedback",
   await expect(page.getByText("Student", { exact: true })).toHaveCount(0);
   await expect(page.getByText("Date", { exact: true })).toHaveCount(0);
 
+  const resultLeft = await page.locator(".result-header").evaluate((element) => element.getBoundingClientRect().left);
+  const actionsLeft = await page.locator(".actions").evaluate((element) => element.getBoundingClientRect().left);
+  expect(actionsLeft).toBe(resultLeft);
+
+  await page.getByRole("button", { name: "Show reasoning" }).click();
+  await expect(page.getByRole("heading", { name: "How the recommendations were reached" })).toBeVisible();
+  await expect(page.getByText("Broad checkpoint", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText("Focused probe · Lesson 1", { exact: true })).toBeVisible();
+  await expect(page.getByText("First nearby observed gap: Lesson 1", { exact: true })).toBeVisible();
+  await expect(page.getByText("amincorrect", { exact: true })).toBeVisible();
+
   await page.getByRole("button", { name: /Copy test sequence/i }).click();
   await expect(page.getByText("Sequence copied")).toBeVisible();
   await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe(
