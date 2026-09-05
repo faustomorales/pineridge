@@ -16,7 +16,12 @@
   $: tutorRecommendation = buildEvidenceRecommendation(run.responses, definition.bands, ufliResourceManifest.lessons);
   $: if (typeof window !== "undefined" && run.printRequested) { window.print(); send({ type: "printHandled" }); }
 
-  function send(event: Parameters<typeof transitionAssessment>[1]) { run = transitionAssessment(run, event); }
+  function send(event: Parameters<typeof transitionAssessment>[1]) {
+    const next = transitionAssessment(run, event);
+    run = next.status === "complete"
+      ? transitionAssessment(next, { type: "reveal" })
+      : next;
+  }
   function handleKeydown(event: KeyboardEvent) {
     if (event.key === "Backspace" && (run.status === "active" || run.status === "complete")) { event.preventDefault(); send({ type: "undo" }); }
     else if (run.status === "active" && event.key === "ArrowRight") { event.preventDefault(); send({ type: "judge", correct: true }); }
@@ -60,13 +65,6 @@
     <section class="word-stage" aria-label="Assessment word" onpointerdown={startSwipe} onpointerup={finishSwipe} onpointercancel={cancelSwipe} onpointerleave={cancelSwipe}>
       <p class="progress">Word {run.responses.length + 1}</p><p class="word">{currentWord(run)?.text}</p>
     </section>
-  {:else if run.status === "complete"}
-    <section class="panel completion" aria-labelledby="complete-title">
-      <p class="eyebrow">Assessment complete</p><h1 id="complete-title">Thank you. You’re finished.</h1>
-      <p>The tutor can review the summary when the screen is turned away.</p>
-      <button class="primary" onclick={() => send({ type: "reveal" })}>Tutor: reveal results</button>
-      <button class="secondary" onclick={() => send({ type: "undo" })}>Undo last judgment</button>
-    </section>
   {:else}
     <article class="results" aria-labelledby="results-title">
       <header class="result-header"><p class="eyebrow">Tutor Result</p><h1 id="results-title">Reading Assessment Result</h1></header>
@@ -96,7 +94,7 @@
   .panel,.results{width:min(100%,48rem);margin:clamp(1rem,8vh,5rem) auto;background:var(--color-paper);border:1px solid var(--color-muted);border-radius:1rem;box-shadow:0 1rem 3rem rgba(22,26,29,.07);padding:clamp(1.5rem,5vw,3.5rem);box-sizing:border-box}
   .eyebrow{margin:0 0 .5rem;color:var(--color-muted);font-size:.78rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(2rem,6vw,3.35rem);line-height:1.05;letter-spacing:-.035em}h2{font-size:1.5rem}h3{font-size:1.05rem}
   .instructions{margin:2rem 0}.instructions p{line-height:1.55;margin:.65rem 0}button{border-radius:.55rem;padding:.8rem 1.05rem;font:inherit;font-weight:700;cursor:pointer}.primary{border:1px solid var(--color-primary-dark);background:var(--color-primary-dark);color:var(--color-paper)}.secondary{border:1px solid var(--color-muted);background:var(--color-paper);color:var(--color-primary-dark)}.fine-print,.notes{font-size:.78rem;line-height:1.5;color:var(--color-muted)}.fine-print{margin:2rem 0 0}
-  main.administration{padding:0;background:var(--color-paper);touch-action:pan-y;user-select:none}.word-stage{min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;place-items:center;padding:2rem;box-sizing:border-box}.progress{color:var(--color-muted);font-size:.82rem;letter-spacing:.04em}.word{align-self:center;margin:0;font-size:clamp(4rem,18vw,10rem);font-weight:600;line-height:1;text-align:center;letter-spacing:.01em}.completion{text-align:center}.completion p:not(.eyebrow){line-height:1.55}.completion button{margin:.35rem}
+  main.administration{padding:0;background:var(--color-paper);touch-action:pan-y;user-select:none}.word-stage{min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;place-items:center;padding:2rem;box-sizing:border-box}.progress{color:var(--color-muted);font-size:.82rem;letter-spacing:.04em}.word{align-self:center;margin:0;font-size:clamp(4rem,18vw,10rem);font-weight:600;line-height:1;text-align:center;letter-spacing:.01em}
   .results{width:min(100%,58rem);margin-top:1rem}.result-header{border-bottom:1px solid var(--color-muted);margin-bottom:2rem;padding-bottom:1.5rem}
   .recommendations{margin-bottom:2.5rem}.recommendation,.outcome{border:1px solid var(--color-muted);border-left:4px solid var(--color-ink);border-radius:.5rem;padding:1.15rem;margin:1rem 0}.recommendation p{margin-bottom:.75rem}.resources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem 1.25rem;padding:0;list-style:none;margin:0}.resources li{font-size:.87rem}.resources strong{display:block}.resources a,a{color:var(--color-accent);text-underline-offset:.18em}.destination{display:none;overflow-wrap:anywhere}
   .notes{border-top:1px solid var(--color-muted);margin-top:2.5rem;padding-top:1.25rem}.actions{display:flex;justify-content:flex-start;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap}.copy-status{font-size:.85rem;margin-top:.75rem}

@@ -164,3 +164,29 @@ it("places a student who also reads p words at Lesson 6", () => {
   ).toBe("6");
   expect(run.responses.length).toBeLessThanOrEqual(15);
 });
+
+it("does not infer Lesson 42 from an entirely incorrect digraph probe", () => {
+  const sequence = "am-c,sat-c,map-c,fin-c,barn-i,storm-i,cave-i,these-i,shed-i,chop-i,huff-i,bell-i,fizz-i";
+  let run = transitionAssessment(createAssessmentRun(assessmentContent), {
+    type: "confirm",
+  });
+
+  for (const entry of sequence.split(",")) {
+    const [expectedWord, judgment] = entry.split("-");
+    expect(currentWord(run)?.text).toBe(expectedWord);
+    run = transitionAssessment(run, {
+      type: "judge",
+      correct: judgment === "c",
+    });
+  }
+
+  expect(run.status).toBe("complete");
+  expect(
+    buildEvidenceRecommendation(
+      run.responses,
+      assessmentContent.bands,
+      ufliResourceManifest.lessons,
+    )?.lesson,
+  ).toBe("9");
+  expect(run.responses).toHaveLength(13);
+});

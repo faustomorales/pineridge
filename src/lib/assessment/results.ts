@@ -95,25 +95,19 @@ export function buildEvidenceRecommendation(
   bands: readonly SkillBand[],
   lessons: readonly UfliLessonResource[],
 ): Recommendation | null {
-  const focusedBandId = responses.find(
-    (response) => response.stage === "focus",
-  )?.bandId;
-  if (!focusedBandId) return null;
-
-  const focusedBandIndex = bands.findIndex((item) => item.id === focusedBandId);
-  if (focusedBandIndex < 0) return null;
-
   const supportedLessons = new Set(
     responses
       .filter((response) => response.correct)
       .flatMap((response) => response.word.evidenceFor),
   );
-  const focusedBand = bands[focusedBandIndex];
-  const supportedProbe = [...focusedBand.probes]
-    .reverse()
-    .find((probe) => supportedLessons.has(probe.lesson));
-  const placementLesson = supportedProbe?.lesson ?? focusedBand.probes[0]?.lesson;
+  const placementLesson = [...supportedLessons].sort(
+    (left, right) => lessonOrder(right) - lessonOrder(left),
+  )[0] ?? bands[0]?.probes[0]?.lesson;
   if (!placementLesson) return null;
+
+  const supportedProbe = bands
+    .flatMap((band) => band.probes)
+    .find((probe) => probe.lesson === placementLesson);
 
   const resource = lessons.find(
     (item) => item.lesson === placementLesson,

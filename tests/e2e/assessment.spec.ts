@@ -19,10 +19,6 @@ test("tutor completes an early-stopped Assessment Run without student feedback",
   await page.keyboard.press("ArrowLeft");
   await page.keyboard.press("ArrowLeft");
   await page.keyboard.press("ArrowLeft");
-  await expect(page.getByRole("heading", { name: /finished/i })).toBeVisible();
-  await expect(page.getByText(/Correct|Incorrect/)).toHaveCount(0);
-
-  await page.getByRole("button", { name: /reveal results/i }).click();
   await expect(page.getByRole("heading", { name: "Lesson 1" })).toBeVisible();
   await expect(page.getByText("Home Practice:")).toBeVisible();
   await expect(page.getByText("Unavailable").first()).toBeVisible();
@@ -78,7 +74,6 @@ test("passing every adaptive sample leads to fluency guidance", async ({ page })
   for (let index = 0; index < 220; index += 1) {
     await page.keyboard.press("ArrowRight");
   }
-  await page.getByRole("button", { name: /reveal results/i }).click();
   await expect(page.getByText(/No UFLI Foundations Starting Point/)).toBeVisible();
   await expect(page.getByRole("link", { name: /Reading Fluency guide/i })).toBeVisible();
 });

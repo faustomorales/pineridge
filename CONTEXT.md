@@ -25,7 +25,7 @@ A correct response to a word explicitly mapped to an instructional lesson. A wor
 _Avoid_: Mastery proof, diagnosis
 
 **Starting Point**:
-The highest lesson supported by Lesson Evidence within the earliest focused skill band. Earlier bands passed by adaptive sampling are treated as broadly demonstrated. The result is a tutor-facing suggestion rather than a formal placement.
+The highest instructional lesson supported by Lesson Evidence anywhere in the Assessment Run. Failed higher-band samples locate where to probe but do not themselves imply support. The result is a tutor-facing suggestion rather than a formal placement.
 _Avoid_: Official placement, score
 
 **Recommendation**:
