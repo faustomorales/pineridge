@@ -20,8 +20,12 @@ _Avoid_: Quiz, worksheet
 A concept for which the student misses at least two words in its Concept Probe.
 _Avoid_: Failure, diagnosis
 
+**Lesson Evidence**:
+A correct response to a word explicitly associated with a lesson. One correct response is enough to support that lesson for Starting Point selection, even when the same word also represents other lessons.
+_Avoid_: Mastery proof, diagnosis
+
 **Starting Point**:
-The earliest recommended lesson inferred from Demonstrated Gaps; it is a tutor-facing suggestion rather than a formal placement.
+Within the earliest focused skill band, the earliest lesson without Lesson Evidence. Earlier bands passed by adaptive sampling are treated as broadly demonstrated. The result is a tutor-facing suggestion rather than a formal placement.
 _Avoid_: Official placement, score
 
 **Recommendation**:

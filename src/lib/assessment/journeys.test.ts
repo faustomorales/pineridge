@@ -9,7 +9,7 @@ import {
   transitionAssessment,
   type AssessmentRun,
 } from "./engine";
-import { buildRecommendations, lessonOrder } from "./results";
+import { buildEvidenceRecommendation, buildRecommendations, lessonOrder } from "./results";
 
 interface StudentProfile {
   gapLessons: string[];
@@ -116,3 +116,27 @@ describe.each([
     });
   },
 );
+
+it("places a student who reads only m, a, s, and t words at Lesson 5", () => {
+  const knownLetters = new Set(["m", "a", "s", "t"]);
+  let run = transitionAssessment(createAssessmentRun(assessmentContent), {
+    type: "confirm",
+  });
+
+  while (run.status === "active") {
+    const word = currentWord(run);
+    expect(word).not.toBeNull();
+    const correct = [...word!.text.toLocaleLowerCase()].every((letter) =>
+      knownLetters.has(letter),
+    );
+    run = transitionAssessment(run, { type: "judge", correct });
+  }
+
+  const recommendation = buildEvidenceRecommendation(
+    run.responses,
+    assessmentContent.bands,
+    ufliResourceManifest.lessons,
+  );
+  expect(recommendation?.lesson).toBe("5");
+  expect(run.responses.length).toBeLessThanOrEqual(15);
+});

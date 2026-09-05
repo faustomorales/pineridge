@@ -16,8 +16,38 @@ type FiveTexts = readonly [string, string, string, string, string];
 type ThreeTexts = readonly [string, string, string];
 type TwoTexts = readonly [string, string];
 
+const graphemeLessons: Readonly<Record<string, string>> = {
+  a: "1", m: "2", s: "3", t: "4", p: "6", f: "7", i: "8", n: "9",
+  o: "12", d: "13", c: "14", u: "15", g: "16", b: "17", e: "18",
+  k: "22", h: "23", r: "24", l: "26", w: "28", j: "29", y: "30",
+  x: "31", qu: "32", v: "33", z: "34", ck: "44", sh: "45", th: "47",
+  ch: "48", wh: "50", ph: "50", ng: "51", nk: "52",
+};
+
+const graphemes = Object.keys(graphemeLessons).sort(
+  (left, right) => right.length - left.length,
+);
+
+const lessonsForText = (text: string, targetLesson?: string): string[] => {
+  const lessons: string[] = [];
+  const normalized = text.toLocaleLowerCase();
+  let index = 0;
+  while (index < normalized.length) {
+    const grapheme = graphemes.find((item) => normalized.startsWith(item, index));
+    if (!grapheme) {
+      index += 1;
+      continue;
+    }
+    const lesson = graphemeLessons[grapheme];
+    if (!lessons.includes(lesson)) lessons.push(lesson);
+    index += grapheme.length;
+  }
+  if (targetLesson && !lessons.includes(targetLesson)) lessons.push(targetLesson);
+  return lessons;
+};
+
 const group = (id: string, texts: FiveTexts): FiveWords =>
-  texts.map((text, index) => ({ id: `${id}-${index + 1}`, text, kind: "real" })) as unknown as FiveWords;
+  texts.map((text, index) => ({ id: `${id}-${index + 1}`, text, kind: "real", lessons: lessonsForText(text) })) as unknown as FiveWords;
 
 const probe = (
   id: string,
@@ -30,8 +60,8 @@ const probe = (
   lesson,
   concept,
   words: [
-    ...real.map((text, index) => ({ id: `${id}-r${index + 1}`, text, kind: "real" as const })),
-    ...invented.map((text, index) => ({ id: `${id}-i${index + 1}`, text, kind: "invented" as const })),
+    ...real.map((text, index) => ({ id: `${id}-r${index + 1}`, text, kind: "real" as const, lessons: lessonsForText(text, lesson) })),
+    ...invented.map((text, index) => ({ id: `${id}-i${index + 1}`, text, kind: "invented" as const, lessons: lessonsForText(text, lesson) })),
   ] as unknown as FiveWords,
 });
 
@@ -42,7 +72,7 @@ const coreAssessmentContent: AssessmentContent = {
       id: "short-vowels",
       label: "Short vowels and early consonants",
       checkpointGroups: [
-        group("short-vowels-1", ["map", "fin", "hot", "web", "sun"]),
+        group("short-vowels-1", ["am", "sat", "map", "fin", "hot"]),
         group("short-vowels-2", ["jam", "lip", "fog", "hen", "rug"]),
         group("short-vowels-3", ["van", "sit", "cot", "jet", "mud"]),
         group("short-vowels-4", ["cap", "win", "log", "bed", "tub"]),
@@ -236,7 +266,7 @@ const coreAssessmentContent: AssessmentContent = {
 const extras = (band: string, entries: readonly ConceptProbe[]) => ({ band, entries });
 const supplemental = [
   extras("short-vowels", [
-    probe("lesson-2", "2", "m /m/", ["map", "ham", "mop"], ["mip", "vam"]), probe("lesson-3", "3", "s /s/", ["sit", "bus", "sap"], ["sop", "nis"]),
+    probe("lesson-2", "2", "m /m/", ["map", "ham", "mop"], ["mip", "vam"]), probe("lesson-3", "3", "s /s/", ["sass", "bus", "sap"], ["sas", "nis"]),
     probe("lesson-4", "4", "t /t/", ["tap", "mat", "tin"], ["tem", "vit"]), probe("lesson-6", "6", "p /p/", ["pat", "lip", "pop"], ["pim", "vap"]),
     probe("lesson-7", "7", "f /f/", ["fin", "fan", "if"], ["fap", "mif"]), probe("lesson-9", "9", "n /n/", ["nap", "tin", "net"], ["nim", "van"]),
     probe("lesson-11", "11", "nasalized a in an and am", ["ham", "fan", "jam"], ["vam", "zan"]), probe("lesson-13", "13", "d /d/", ["dip", "sad", "den"], ["dop", "mid"]),

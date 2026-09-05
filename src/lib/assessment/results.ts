@@ -1,6 +1,7 @@
 import type { UfliLessonResource } from "$lib/resources";
 
-import type { DemonstratedGap } from "./engine";
+import type { AssessmentResponse, DemonstratedGap } from "./engine";
+import type { SkillBand } from "./model";
 
 export interface Recommendation {
   lesson: string;
@@ -87,4 +88,40 @@ export function buildRecommendations(
   return recommendations.sort(
     (left, right) => lessonOrder(left.lesson) - lessonOrder(right.lesson),
   );
+}
+
+export function buildEvidenceRecommendation(
+  responses: readonly AssessmentResponse[],
+  bands: readonly SkillBand[],
+  lessons: readonly UfliLessonResource[],
+): Recommendation | null {
+  const focusedBandId = responses.find(
+    (response) => response.stage === "focus",
+  )?.bandId;
+  if (!focusedBandId) return null;
+
+  const focusedBandIndex = bands.findIndex((item) => item.id === focusedBandId);
+  if (focusedBandIndex < 0) return null;
+
+  const supportedLessons = new Set(
+    responses
+      .filter((response) => response.correct)
+      .flatMap((response) => response.word.lessons),
+  );
+  const firstUnsupportedProbe = bands
+    .slice(focusedBandIndex)
+    .flatMap((band) => band.probes)
+    .find((probe) => !supportedLessons.has(probe.lesson));
+  if (!firstUnsupportedProbe) return null;
+
+  const resource = lessons.find(
+    (item) => item.lesson === firstUnsupportedProbe.lesson,
+  ) ?? null;
+  return {
+    lesson: firstUnsupportedProbe.lesson,
+    concept: firstUnsupportedProbe.concept,
+    kind: "concept",
+    isStartingPoint: true,
+    resource,
+  };
 }

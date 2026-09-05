@@ -21,6 +21,9 @@ describe("assessment content", () => {
       for (const group of band.checkpointGroups) {
         expect(group).toHaveLength(5);
         for (const word of group) {
+          expect(word.lessons.length).toBeGreaterThan(0);
+          expect(new Set(word.lessons).size).toBe(word.lessons.length);
+          expect(word.lessons.every((lesson) => manifestLessons.has(lesson))).toBe(true);
           expect(wordIds.has(word.id)).toBe(false);
           wordIds.add(word.id);
         }
@@ -38,11 +41,22 @@ describe("assessment content", () => {
           probe.words.filter((word) => word.kind === "invented"),
         ).toHaveLength(2);
         for (const word of probe.words) {
+          expect(word.lessons).toContain(probe.lesson);
+          expect(new Set(word.lessons).size).toBe(word.lessons.length);
+          expect(word.lessons.every((lesson) => manifestLessons.has(lesson))).toBe(true);
           expect(wordIds.has(word.id)).toBe(false);
           wordIds.add(word.id);
         }
       }
     }
+  });
+
+  it("associates map with the lessons for m, a, and p", () => {
+    const map = assessmentContent.bands[0].checkpointGroups[0].find(
+      (word) => word.text === "map",
+    );
+    expect(map).toBeDefined();
+    expect(map?.lessons).toEqual(["2", "1", "6"]);
   });
 
   it("presents Concept Probes in instructional lesson order", () => {

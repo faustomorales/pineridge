@@ -5,15 +5,16 @@ test("tutor completes an early-stopped Assessment Run without student feedback",
 }) => {
   await page.goto("/assessment/");
   await page.waitForLoadState("networkidle");
+  await page.context().grantPermissions(["clipboard-read", "clipboard-write"]);
   await expect(page.getByRole("heading", { name: "Reading Assessment" })).toBeVisible();
 
   await page.getByRole("button", { name: /begin/i }).click();
-  await expect(page.getByText("map", { exact: true })).toBeVisible();
+  await expect(page.getByText("am", { exact: true })).toBeVisible();
   await expect(page.getByText(/correct|incorrect/i)).toHaveCount(0);
 
   await page.keyboard.press("ArrowLeft");
   await page.keyboard.press("ArrowLeft");
-  await expect(page.getByText("am", { exact: true })).toBeVisible();
+  await expect(page.getByText("map", { exact: true })).toBeVisible();
 
   await page.keyboard.press("ArrowLeft");
   await page.keyboard.press("ArrowLeft");
@@ -22,16 +23,20 @@ test("tutor completes an early-stopped Assessment Run without student feedback",
   await expect(page.getByText(/Correct|Incorrect/)).toHaveCount(0);
 
   await page.getByRole("button", { name: /reveal results/i }).click();
-  await expect(page.getByText(/Starting Point.*Lesson 1/)).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Lesson 1" })).toBeVisible();
   await expect(page.getByText("Home Practice:")).toBeVisible();
   await expect(page.getByText("Unavailable").first()).toBeVisible();
-  await expect(page.getByText("Incorrect").first()).toBeVisible();
-  await expect(page.locator(".response-group li")).toHaveCount(5);
+  await expect(page.getByText("Student", { exact: true })).toHaveCount(0);
+  await expect(page.getByText("Date", { exact: true })).toHaveCount(0);
+
+  await page.getByRole("button", { name: /Copy test sequence/i }).click();
+  await expect(page.getByText("Sequence copied")).toBeVisible();
+  await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe(
+    "am-i,sat-i,map-i,mat-i,lat-i",
+  );
 
   await page.emulateMedia({ media: "print" });
   await expect(page.getByRole("button", { name: /Print/ })).toBeHidden();
-  await expect(page.getByText("Student", { exact: true })).toBeVisible();
-  await expect(page.getByText("Date", { exact: true })).toBeVisible();
   await expect(page.locator(".destination").first()).toBeVisible();
 
   await page.emulateMedia({ media: "screen" });
@@ -47,7 +52,7 @@ test("phone swipe advances while the word screen remains neutral", async ({ page
   await stage.dispatchEvent("pointerdown", { clientX: 40, clientY: 120 });
   await stage.dispatchEvent("pointerup", { clientX: 140, clientY: 120 });
 
-  await expect(page.getByText("fin", { exact: true })).toBeVisible();
+  await expect(page.getByText("sat", { exact: true })).toBeVisible();
   await expect(page.getByText(/correct|incorrect/i)).toHaveCount(0);
 });
 
@@ -56,11 +61,11 @@ test("keyboard undo, ignored input, and reload do not retain a run", async ({ pa
   await page.waitForLoadState("networkidle");
   await page.getByRole("button", { name: /begin/i }).click();
   await page.keyboard.press("ArrowRight");
-  await expect(page.getByText("fin", { exact: true })).toBeVisible();
+  await expect(page.getByText("sat", { exact: true })).toBeVisible();
   await page.keyboard.press("Backspace");
-  await expect(page.getByText("map", { exact: true })).toBeVisible();
+  await expect(page.getByText("am", { exact: true })).toBeVisible();
   await page.keyboard.press("Enter");
-  await expect(page.getByText("map", { exact: true })).toBeVisible();
+  await expect(page.getByText("am", { exact: true })).toBeVisible();
 
   await page.reload();
   await expect(page.getByRole("button", { name: /begin/i })).toBeVisible();
