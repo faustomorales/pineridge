@@ -50,6 +50,11 @@ interface RunSnapshot {
     lastPassedBandIndex: number | null;
     firstFailedBandIndex: number | null;
   };
+  frontier: {
+    lowerProbeIndex: number;
+    upperProbeIndex: number;
+    stride: number;
+  } | null;
 }
 
 export interface AssessmentRun extends RunSnapshot {
@@ -88,6 +93,7 @@ export function createAssessmentRun(
       lastPassedBandIndex: null,
       firstFailedBandIndex: null,
     },
+    frontier: null,
     history: [],
   };
 }
@@ -121,6 +127,7 @@ function snapshot(run: AssessmentRun): RunSnapshot {
     completionReason: run.completionReason,
     printRequested: run.printRequested,
     searchBounds: { ...run.searchBounds },
+    frontier: run.frontier ? { ...run.frontier } : null,
   };
 }
 
@@ -177,7 +184,6 @@ function routeAfterCheckpointPass(run: AssessmentRun): AssessmentRun {
 
 function routeAfterCheckpointFail(run: AssessmentRun): AssessmentRun {
   const current = run.position.bandIndex;
-  const lower = run.searchBounds.lastPassedBandIndex;
   const failedRun = {
     ...run,
     searchBounds: {
@@ -186,26 +192,7 @@ function routeAfterCheckpointFail(run: AssessmentRun): AssessmentRun {
     },
   };
 
-  if (lower === null || current - lower <= 1) return enterFocus(failedRun);
-  return showCheckpoint(failedRun, Math.floor((lower + current) / 2));
-}
-
-function routeAfterSuccessfulFocus(run: AssessmentRun): AssessmentRun {
-  const current = run.position.bandIndex;
-  const last = run.definition.bands.length - 1;
-  const passedRun = {
-    ...run,
-    searchBounds: {
-      lastPassedBandIndex: current,
-      firstFailedBandIndex: null,
-    },
-  };
-
-  if (current === last) return completeRun(passedRun);
-  return showCheckpoint(
-    passedRun,
-    Math.floor((current + last + 1) / 2),
-  );
+  return enterFocus(failedRun);
 }
 
 function advanceCheckpoint(run: AssessmentRun): AssessmentRun {
@@ -236,21 +223,58 @@ function advanceCheckpoint(run: AssessmentRun): AssessmentRun {
 }
 
 function enterFocus(run: AssessmentRun): AssessmentRun {
-  const band = run.definition.bands[run.position.bandIndex];
-  if (band.probes.length === 0) {
-    return routeAfterSuccessfulFocus(run);
-  }
+  const probes = run.definition.bands.flatMap((band, bandIndex) =>
+    band.probes.map((probe, probeIndex) => ({ bandIndex, probeIndex, probe })),
+  );
+  if (probes.length === 0) return completeRun(run);
+  const demonstratedOrder = Math.max(
+    ...run.responses
+      .filter((response) => response.correct)
+      .flatMap((response) => response.word.evidenceFor)
+      .map((lesson) => Number.parseFloat(lesson)),
+    Number.NEGATIVE_INFINITY,
+  );
+  const lowerProbeIndex = probes.findLastIndex(
+    ({ probe }) => Number.parseFloat(probe.lesson) <= demonstratedOrder,
+  );
+  const failedBandIndex = run.position.bandIndex;
+  const upperProbeIndex = probes.findLastIndex(
+    ({ bandIndex }) => bandIndex === failedBandIndex,
+  );
+  const nextProbeIndex = Math.min(lowerProbeIndex + 1, upperProbeIndex);
+  const next = probes[nextProbeIndex];
 
   return {
     ...run,
     position: {
-      bandIndex: run.position.bandIndex,
+      bandIndex: next.bandIndex,
       stage: "focus",
       groupIndex: 0,
-      probeIndex: 0,
+      probeIndex: next.probeIndex,
       wordIndex: 0,
     },
+    frontier: { lowerProbeIndex, upperProbeIndex, stride: 2 },
   };
+}
+
+function showGlobalProbe(run: AssessmentRun, globalProbeIndex: number): AssessmentRun {
+  const probes = run.definition.bands.flatMap((band, bandIndex) =>
+    band.probes.map((_, probeIndex) => ({ bandIndex, probeIndex })),
+  );
+  const next = probes[globalProbeIndex];
+  if (!next) return completeRun(run);
+  return {
+    ...run,
+    position: { bandIndex: next.bandIndex, stage: "focus", groupIndex: 0, probeIndex: next.probeIndex, wordIndex: 0 },
+  };
+}
+
+function currentGlobalProbeIndex(run: AssessmentRun): number {
+  let index = 0;
+  for (let bandIndex = 0; bandIndex < run.position.bandIndex; bandIndex += 1) {
+    index += run.definition.bands[bandIndex].probes.length;
+  }
+  return index + (run.position.probeIndex ?? 0);
 }
 
 function advanceFocus(run: AssessmentRun): AssessmentRun {
@@ -261,6 +285,7 @@ function advanceFocus(run: AssessmentRun): AssessmentRun {
     (response) => response.stage === "focus" && response.groupId === probe.id,
   );
   const misses = probeResponses.filter((response) => !response.correct).length;
+  const correct = probeResponses.length - misses;
   let demonstratedGaps = run.demonstratedGaps;
 
   if (
@@ -279,8 +304,36 @@ function advanceFocus(run: AssessmentRun): AssessmentRun {
     run = { ...run, demonstratedGaps };
   }
 
-  if (misses >= 3 || demonstratedGaps.length >= 3) {
-    return { ...run, status: "complete", completionReason: "needs-support" };
+  if (correct >= 2) {
+    const current = currentGlobalProbeIndex(run);
+    const frontier = run.frontier!;
+    const lowerProbeIndex = current;
+    const lastProbeIndex = run.definition.bands.reduce(
+      (count, item) => count + item.probes.length,
+      0,
+    ) - 1;
+    if (current >= lastProbeIndex) return completeRun(run);
+    const upperProbeIndex = current >= frontier.upperProbeIndex
+      ? lastProbeIndex
+      : frontier.upperProbeIndex;
+    const nextIndex = Math.min(current + frontier.stride, upperProbeIndex);
+    return showGlobalProbe(
+      { ...run, frontier: { lowerProbeIndex, upperProbeIndex, stride: frontier.stride * 2 } },
+      nextIndex,
+    );
+  }
+
+  if (misses >= 2) {
+    const current = currentGlobalProbeIndex(run);
+    const frontier = run.frontier!;
+    if (current - frontier.lowerProbeIndex <= 1) {
+      return { ...run, status: "complete", completionReason: "needs-support" };
+    }
+    const upperProbeIndex = current;
+    return showGlobalProbe(
+      { ...run, frontier: { ...frontier, upperProbeIndex, stride: 1 } },
+      Math.floor((frontier.lowerProbeIndex + upperProbeIndex) / 2),
+    );
   }
 
   if (run.position.wordIndex + 1 < probe.words.length) {
@@ -290,18 +343,7 @@ function advanceFocus(run: AssessmentRun): AssessmentRun {
     };
   }
 
-  if (probeIndex + 1 < band.probes.length) {
-    return {
-      ...run,
-      position: {
-        ...run.position,
-        probeIndex: probeIndex + 1,
-        wordIndex: 0,
-      },
-    };
-  }
-
-  return routeAfterSuccessfulFocus(run);
+  return { ...run, status: "complete", completionReason: "needs-support" };
 }
 
 function skipPreviouslyAdministeredWords(run: AssessmentRun): AssessmentRun {

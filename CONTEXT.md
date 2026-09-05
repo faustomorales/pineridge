@@ -32,6 +32,10 @@ _Avoid_: Official placement, score
 The earliest Demonstrated Gap at or above the Most Advanced Demonstrated lesson. Together those two signals bracket what was established and where focused difficulty first appeared; lessons between them may be untested.
 _Avoid_: First unmastered lesson, diagnosis
 
+**Mastery Frontier**:
+The neighborhood between the Most Advanced Demonstrated lesson and the next Concept Probe that the student cannot pass with two correct responses. Successful nearby probes move the frontier and increase the next jump; a failed jump narrows the search back toward the frontier.
+_Avoid_: Fixed placement range, distant failed band
+
 **Recommendation**:
 A Starting Point or additional Demonstrated Gap paired with links to available official instructional resources.
 _Avoid_: Prescription

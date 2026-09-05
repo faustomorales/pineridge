@@ -36,7 +36,13 @@
   }
   function cancelSwipe() { pointerStart = null; }
   async function copySequence() {
-    const sequence = run.responses.map((response) => `${response.word.text}-${response.correct ? "c" : "i"}`).join(",");
+    const entries = run.responses.map((response) => `${response.word.text}-${response.correct ? "c" : "i"}`);
+    const recommendationLesson = tutorResult.demonstrated?.lesson ?? tutorResult.firstGap?.lesson ?? "none";
+    entries.push(`rec-${recommendationLesson}`);
+    if (tutorResult.firstGap && tutorResult.firstGap.lesson !== recommendationLesson) {
+      entries.push(`gap-${tutorResult.firstGap.lesson}`);
+    }
+    const sequence = entries.join(",");
     try {
       await navigator.clipboard.writeText(sequence);
       copyStatus = "Sequence copied";

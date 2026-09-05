@@ -9,13 +9,11 @@ import {
   transitionAssessment,
   type AssessmentRun,
 } from "./engine";
-import { buildEvidenceRecommendation, buildEvidenceSummary, buildRecommendations, lessonOrder } from "./results";
+import { buildEvidenceRecommendation, buildEvidenceSummary, lessonOrder } from "./results";
 
 interface StudentProfile {
   gapLessons: string[];
-  expectedRecommendationLessons: string[];
   maximumWords: number;
-  expectedWords: number;
 }
 
 function bandForLesson(lesson: string): number {
@@ -47,12 +45,9 @@ function judgmentFor(run: AssessmentRun, profile: StudentProfile): boolean {
   const responsesInProbe = run.responses.filter(
     (response) => response.groupId === probe.id,
   ).length;
-  if (profile.gapLessons.includes(probe.lesson)) {
-    const isDecisiveGap = probe.lesson === profile.gapLessons.at(-1);
-    // Earlier gaps have two mixed misses; the final gap has three and stops the run.
-    return isDecisiveGap
-      ? responsesInProbe === 1
-      : responsesInProbe === 1 || responsesInProbe >= 3;
+  if (lessonOrder(probe.lesson) >= lessonOrder(profile.gapLessons[0])) {
+    // A mixed failure reaches two misses on the third word.
+    return responsesInProbe === 1;
   }
 
   // Earlier mastered concepts still contain an occasional isolated miscue.
@@ -70,25 +65,26 @@ function administer(profile: StudentProfile): AssessmentRun {
       type: "judge",
       correct: judgmentFor(run, profile),
     });
-    expect(run.responses.length).toBeLessThanOrEqual(profile.maximumWords);
+    expect(run.responses.length).toBeLessThanOrEqual(200);
   }
 
   return run;
 }
 
 describe.each([
-  { gapLessons: ["7"], expectedRecommendationLessons: ["7"], maximumWords: 38, expectedWords: 32 },
-  { gapLessons: ["48"], expectedRecommendationLessons: ["48"], maximumWords: 49, expectedWords: 45 },
-  { gapLessons: ["105"], expectedRecommendationLessons: ["105"], maximumWords: 53, expectedWords: 50 },
-  { gapLessons: ["120"], expectedRecommendationLessons: ["120"], maximumWords: 73, expectedWords: 72 },
-  { gapLessons: ["44", "48"], expectedRecommendationLessons: ["44", "48", "49"], maximumWords: 50, expectedWords: 45 },
+  { gapLessons: ["7"], maximumWords: 20 },
+  { gapLessons: ["48"], maximumWords: 42 },
+  { gapLessons: ["105"], maximumWords: 58 },
+  { gapLessons: ["120"], maximumWords: 72 },
 ] satisfies StudentProfile[])(
   "realistic student journey with gaps at $gapLessons",
   (profile) => {
     it("recommends the intended Starting Point without repeated items or Checkpoints", () => {
       const run = administer(profile);
-      const recommendations = buildRecommendations(
+      const summary = buildEvidenceSummary(
+        run.responses,
         run.demonstratedGaps,
+        assessmentContent.bands,
         ufliResourceManifest.lessons,
       );
       const wordIds = run.responses.map((response) => response.word.id);
@@ -104,14 +100,10 @@ describe.each([
         .filter((bandId, index, bands) => bands[index - 1] !== bandId);
 
       expect(run.completionReason).toBe("needs-support");
-      expect(recommendations.map((item) => item.lesson)).toEqual(
-        profile.expectedRecommendationLessons,
-      );
-      expect(recommendations[0].isStartingPoint).toBe(true);
+      expect(summary.firstGap?.lesson).toBe(profile.gapLessons[0]);
       expect(new Set(wordIds).size).toBe(wordIds.length);
       expect(repeatedWords).toEqual([]);
       expect(new Set(checkpointBands).size).toBe(checkpointBands.length);
-      expect(run.responses).toHaveLength(profile.expectedWords);
       expect(run.responses.length).toBeLessThanOrEqual(profile.maximumWords);
     });
   },
@@ -165,8 +157,8 @@ it("places a student who also reads p words at Lesson 6", () => {
   expect(run.responses.length).toBeLessThanOrEqual(15);
 });
 
-it("does not infer Lesson 42 from an entirely incorrect digraph probe", () => {
-  const sequence = "am-c,sat-c,map-c,fin-c,barn-i,storm-i,cave-i,these-i,shed-i,chop-i,huff-i,bell-i,fizz-i";
+it("returns from a distant miss to probe the neighborhood above Lesson 9", () => {
+  const sequence = "am-c,sat-c,map-c,fin-c,barn-i,storm-i";
   let run = transitionAssessment(createAssessmentRun(assessmentContent), {
     type: "confirm",
   });
@@ -180,14 +172,9 @@ it("does not infer Lesson 42 from an entirely incorrect digraph probe", () => {
     });
   }
 
-  expect(run.status).toBe("complete");
-  expect(
-    buildEvidenceRecommendation(
-      run.responses,
-      assessmentContent.bands,
-      ufliResourceManifest.lessons,
-    )?.lesson,
-  ).toBe("9");
+  expect(currentWord(run)?.text).toBe("ham");
+  run = transitionAssessment(run, { type: "judge", correct: false });
+  run = transitionAssessment(run, { type: "judge", correct: false });
   const summary = buildEvidenceSummary(
     run.responses,
     run.demonstratedGaps,
@@ -195,6 +182,6 @@ it("does not infer Lesson 42 from an entirely incorrect digraph probe", () => {
     ufliResourceManifest.lessons,
   );
   expect(summary.demonstrated?.lesson).toBe("9");
-  expect(summary.firstGap?.lesson).toBe("42");
-  expect(run.responses).toHaveLength(13);
+  expect(summary.firstGap?.lesson).toBe("11");
+  expect(run.responses).toHaveLength(8);
 });

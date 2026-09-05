@@ -127,9 +127,24 @@ export function buildEvidenceSummary(
   bands: readonly SkillBand[],
   lessons: readonly UfliLessonResource[],
 ): EvidenceSummary {
+  const focusCorrectCounts = responses
+      .filter((response) => response.stage === "focus" && response.correct)
+      .reduce((counts, response) => {
+        counts.set(response.groupId, (counts.get(response.groupId) ?? 0) + 1);
+        return counts;
+      }, new Map<string, number>());
+  const passedFocusGroups = new Set(
+    [...focusCorrectCounts.entries()]
+      .filter(([, correct]) => correct >= 2)
+      .map(([groupId]) => groupId),
+  );
   const supportedLessons = new Set(
     responses
-      .filter((response) => response.correct)
+      .filter(
+        (response) =>
+          response.correct &&
+          (response.stage === "checkpoint" || passedFocusGroups.has(response.groupId)),
+      )
       .flatMap((response) => response.word.evidenceFor),
   );
   const demonstratedLesson = [...supportedLessons].sort(

@@ -104,20 +104,16 @@ describe("assessment run", () => {
     expect(run.completionReason).toBe("all-passed");
   });
 
-  it("bisects downward until it brackets the focused band", () => {
+  it("returns to the neighborhood above demonstrated evidence after a distant miss", () => {
     let run = transitionAssessment(createAssessmentRun(adaptiveDefinition), {
       type: "confirm",
     });
 
     run = passSample(run); // 0 -> 5
-    run = failSample(run); // 5 -> 2
-    expect(run.position.bandIndex).toBe(2);
-    run = passSample(run); // 2 -> 3
-    run = passSample(run); // 3 -> 4
-    run = passSample(run); // adjacent boundary -> focus 5
+    run = failSample(run);
 
     expect(run.position).toMatchObject({
-      bandIndex: 5,
+      bandIndex: 1,
       stage: "focus",
       probeIndex: 0,
       wordIndex: 0,
@@ -171,7 +167,7 @@ describe("assessment run", () => {
     });
   });
 
-  it("records a Demonstrated Gap after two misses and continues the probe", () => {
+  it("records an adjacent Demonstrated Gap after two misses and completes", () => {
     let run = start();
     run = judge(judge(run, false), false);
     run = judge(run, false);
@@ -185,14 +181,13 @@ describe("assessment run", () => {
         concept: "f /f/",
       },
     ]);
-    expect(run.status).toBe("active");
-    expect(run.position.wordIndex).toBe(2);
+    expect(run.status).toBe("complete");
   });
 
-  it("ends after a third miss in one Concept Probe", () => {
+  it("ends after a second miss in one Concept Probe", () => {
     let run = start();
     run = judge(judge(run, false), false);
-    run = judge(judge(judge(run, false), false), false);
+    run = judge(judge(run, false), false);
 
     expect(run.status).toBe("complete");
     expect(run.completionReason).toBe("needs-support");
@@ -202,13 +197,13 @@ describe("assessment run", () => {
   it("undoes a judgment that caused completion", () => {
     let run = start();
     run = judge(judge(run, false), false);
-    run = judge(judge(judge(run, false), false), false);
+    run = judge(judge(run, false), false);
 
     run = transitionAssessment(run, { type: "undo" });
 
     expect(run.status).toBe("active");
-    expect(run.responses.at(-1)?.word.id).toBe("f-2");
-    expect(run.position).toMatchObject({ stage: "focus", wordIndex: 2 });
+    expect(run.responses.at(-1)?.word.id).toBe("f-1");
+    expect(run.position).toMatchObject({ stage: "focus", wordIndex: 1 });
 
     const afterSecondUndo = transitionAssessment(run, { type: "undo" });
     expect(afterSecondUndo).toEqual(run);
@@ -243,24 +238,13 @@ describe("assessment run", () => {
     });
   });
 
-  it("ends as soon as a third Demonstrated Gap is observed", () => {
+  it("advances the frontier after two correct focused words", () => {
     let run = start();
     run = judge(judge(run, false), false);
+    run = judge(judge(run, true), true);
 
-    for (let probe = 0; probe < 2; probe += 1) {
-      for (const correct of [false, false, true, true, true]) {
-        run = judge(run, correct);
-      }
-    }
-    run = judge(run, false);
-    run = judge(run, false);
-
-    expect(run.status).toBe("complete");
-    expect(run.demonstratedGaps.map((gap) => gap.lesson)).toEqual([
-      "7",
-      "8",
-      "9",
-    ]);
+    expect(run.status).toBe("active");
+    expect(run.position).toMatchObject({ stage: "focus", probeIndex: 2 });
   });
 
   it("finishes with no Starting Point when every Checkpoint passes", () => {

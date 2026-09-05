@@ -29,7 +29,7 @@ test("tutor completes an early-stopped Assessment Run without student feedback",
   await page.getByRole("button", { name: /Copy test sequence/i }).click();
   await expect(page.getByText("Sequence copied")).toBeVisible();
   await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe(
-    "am-i,sat-i,map-i,mat-i,lat-i",
+    "am-i,sat-i,map-i,mat-i,rec-1",
   );
 
   await page.emulateMedia({ media: "print" });
