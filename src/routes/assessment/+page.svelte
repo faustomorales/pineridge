@@ -130,7 +130,7 @@
           <select id="prior-placement" bind:value={priorPlacementLesson}><option value="">Start from the beginning</option>{#each priorPlacementOptions as lesson}<option value={lesson}>Lesson {lesson}</option>{/each}</select>
         </label>
       </div>
-      <p class="fine-print">Created locally to align with UFLI’s scope and sequence. This tool is not created or endorsed by UFLI, and its tutor-facing suggestion has not been validated as a formal placement.</p>
+      <p class="fine-print">Created to align with UFLI’s scope and sequence. This tool is not created or endorsed by UFLI, and its tutor-facing suggestion has not been validated as a formal placement.</p>
     </section>
   {:else if run.status === "active"}
     <section class="word-stage" aria-label="Assessment word" onpointerdown={startSwipe} onpointerup={finishSwipe} onpointercancel={cancelSwipe} onpointerleave={cancelSwipe}>
@@ -139,7 +139,7 @@
   {:else}
     <article class="results" aria-labelledby="results-title">
       <header class="result-header"><p class="eyebrow">Tutor Result</p><h1 id="results-title">Reading Assessment Result</h1></header>
-      <section class="recommendations" aria-labelledby="recommendations-title"><h2 id="recommendations-title">Recommendations</h2>
+      <section class="recommendations" aria-label="Recommendations">
         {#if run.completionReason === "all-passed"}
           <div class="outcome"><h3>No UFLI Foundations Starting Point was identified.</h3>
             <p>The adaptive samples did not identify a Foundations starting point. Review UFLI’s official <a href={fluencyGuideUrl} target="_blank" rel="noreferrer">Supporting the Development of Reading Fluency guide</a>.</p><p class="destination">{fluencyGuideUrl}</p></div>
@@ -188,7 +188,7 @@
           </ol>
         </section>
       {/if}
-      <footer class="notes"><p>Created locally to align with UFLI’s scope and sequence. Not created or endorsed by UFLI. This unvalidated result is a tutor-facing suggestion, not a formal placement.</p></footer>
+      <footer class="notes"><p>Created to align with UFLI’s scope and sequence. Not created or endorsed by UFLI. This unvalidated result is a tutor-facing suggestion, not a formal placement.</p></footer>
       <div class="actions no-print"><button class="secondary" aria-expanded={showReasoning} aria-controls="recommendation-path" onclick={() => showReasoning = !showReasoning}>{showReasoning ? "Hide reasoning" : "Show reasoning"}</button><button class="primary" onclick={copySequence}>Copy test sequence</button><button class="secondary" onclick={() => send({ type: "requestPrint" })}>Print / Save as PDF</button><button class="secondary" onclick={() => send({ type: "reset" })}>Start a new run</button></div>
       {#if copyStatus}<p class="copy-status" aria-live="polite">{copyStatus}</p>{/if}
     </article>
