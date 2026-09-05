@@ -28,6 +28,10 @@ _Avoid_: Mastery proof, diagnosis
 The highest instructional lesson supported by Lesson Evidence anywhere in the Assessment Run. Failed higher-band samples locate where to probe but do not themselves imply support. The result is a tutor-facing suggestion rather than a formal placement.
 _Avoid_: Official placement, score
 
+**First Observed Gap**:
+The earliest Demonstrated Gap at or above the Most Advanced Demonstrated lesson. Together those two signals bracket what was established and where focused difficulty first appeared; lessons between them may be untested.
+_Avoid_: First unmastered lesson, diagnosis
+
 **Recommendation**:
 A Starting Point or additional Demonstrated Gap paired with links to available official instructional resources.
 _Avoid_: Prescription

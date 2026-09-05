@@ -11,6 +11,11 @@ export interface Recommendation {
   resource: UfliLessonResource | null;
 }
 
+export interface EvidenceSummary {
+  demonstrated: Recommendation | null;
+  firstGap: Recommendation | null;
+}
+
 const reviewCoverage = [
   { lesson: "19", first: 1, last: 18 },
   { lesson: "41a", first: 20, last: 40.3 },
@@ -95,28 +100,55 @@ export function buildEvidenceRecommendation(
   bands: readonly SkillBand[],
   lessons: readonly UfliLessonResource[],
 ): Recommendation | null {
+  return buildEvidenceSummary(responses, [], bands, lessons).demonstrated;
+}
+
+function recommendationForLesson(
+  lesson: string,
+  bands: readonly SkillBand[],
+  lessons: readonly UfliLessonResource[],
+): Recommendation {
+  const probe = bands
+    .flatMap((band) => band.probes)
+    .find((item) => item.lesson === lesson);
+  const resource = lessons.find((item) => item.lesson === lesson) ?? null;
+  return {
+    lesson,
+    concept: probe?.concept ?? resource?.concept ?? "Starting lesson",
+    kind: "concept",
+    isStartingPoint: true,
+    resource,
+  };
+}
+
+export function buildEvidenceSummary(
+  responses: readonly AssessmentResponse[],
+  gaps: readonly DemonstratedGap[],
+  bands: readonly SkillBand[],
+  lessons: readonly UfliLessonResource[],
+): EvidenceSummary {
   const supportedLessons = new Set(
     responses
       .filter((response) => response.correct)
       .flatMap((response) => response.word.evidenceFor),
   );
-  const placementLesson = [...supportedLessons].sort(
+  const demonstratedLesson = [...supportedLessons].sort(
     (left, right) => lessonOrder(right) - lessonOrder(left),
-  )[0] ?? bands[0]?.probes[0]?.lesson;
-  if (!placementLesson) return null;
+  )[0];
+  const demonstrated = demonstratedLesson
+    ? recommendationForLesson(demonstratedLesson, bands, lessons)
+    : null;
+  const demonstratedOrder = demonstratedLesson
+    ? lessonOrder(demonstratedLesson)
+    : Number.NEGATIVE_INFINITY;
+  const firstGapLesson = [...gaps]
+    .sort((left, right) => lessonOrder(left.lesson) - lessonOrder(right.lesson))
+    .find((gap) => lessonOrder(gap.lesson) >= demonstratedOrder)?.lesson;
 
-  const supportedProbe = bands
-    .flatMap((band) => band.probes)
-    .find((probe) => probe.lesson === placementLesson);
-
-  const resource = lessons.find(
-    (item) => item.lesson === placementLesson,
-  ) ?? null;
   return {
-    lesson: placementLesson,
-    concept: supportedProbe?.concept ?? resource?.concept ?? "Starting lesson",
-    kind: "concept",
-    isStartingPoint: true,
-    resource,
+    demonstrated,
+    firstGap: firstGapLesson
+      ? recommendationForLesson(firstGapLesson, bands, lessons)
+      : null,
   };
 }

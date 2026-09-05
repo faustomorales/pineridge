@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { ufliResourceManifest } from "$lib/resources";
 import { assessmentContent } from "./content";
 import type { DemonstratedGap } from "./engine";
-import { buildEvidenceRecommendation, buildRecommendations } from "./results";
+import { buildEvidenceRecommendation, buildEvidenceSummary, buildRecommendations } from "./results";
 
 const gap = (lesson: string): DemonstratedGap => ({
   bandId: "digraphs",
@@ -13,6 +13,21 @@ const gap = (lesson: string): DemonstratedGap => ({
 });
 
 describe("Tutor Result recommendations", () => {
+  it("brackets Lesson 9 evidence with the first observed Lesson 42 gap", () => {
+    const fin = assessmentContent.bands[0].checkpointGroups[0].find(
+      (word) => word.text === "fin",
+    )!;
+    const summary = buildEvidenceSummary(
+      [{ correct: true, bandId: "short-vowels", stage: "checkpoint", groupId: "short-vowels-0", word: fin }],
+      [gap("42")],
+      assessmentContent.bands,
+      ufliResourceManifest.lessons,
+    );
+
+    expect(summary.demonstrated?.lesson).toBe("9");
+    expect(summary.firstGap?.lesson).toBe("42");
+  });
+
   it("chooses Lesson 5 when correct words evidence Lessons 1 through 4", () => {
     const band = assessmentContent.bands[0];
     const responses = [

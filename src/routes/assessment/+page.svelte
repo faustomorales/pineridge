@@ -1,7 +1,7 @@
 <script lang="ts">
   import { assessmentContent } from "$lib/assessment/content";
   import { createAssessmentRun, currentWord, transitionAssessment, type AssessmentDefinition } from "$lib/assessment/engine";
-  import { buildEvidenceRecommendation } from "$lib/assessment/results";
+  import { buildEvidenceSummary, type Recommendation } from "$lib/assessment/results";
   import { ufliResourceManifest, type UfliResourceLinks } from "$lib/resources";
 
   const definition: AssessmentDefinition = assessmentContent;
@@ -13,7 +13,8 @@
   let run = createAssessmentRun(definition);
   let pointerStart: { x: number; y: number } | null = null;
   let copyStatus = "";
-  $: tutorRecommendation = buildEvidenceRecommendation(run.responses, definition.bands, ufliResourceManifest.lessons);
+  $: tutorResult = buildEvidenceSummary(run.responses, run.demonstratedGaps, definition.bands, ufliResourceManifest.lessons);
+  $: tutorResultItems = resultItems(tutorResult.demonstrated, tutorResult.firstGap);
   $: if (typeof window !== "undefined" && run.printRequested) { window.print(); send({ type: "printHandled" }); }
 
   function send(event: Parameters<typeof transitionAssessment>[1]) {
@@ -43,6 +44,15 @@
       copyStatus = "Could not copy sequence";
     }
   }
+  function resultItems(demonstrated: Recommendation | null, firstGap: Recommendation | null) {
+    if (demonstrated && firstGap?.lesson === demonstrated.lesson) {
+      return [{ label: "Most advanced demonstrated · First observed gap", recommendation: demonstrated }];
+    }
+    return [
+      demonstrated && { label: "Most advanced demonstrated", recommendation: demonstrated },
+      firstGap && { label: "First observed gap", recommendation: firstGap },
+    ].filter((item): item is { label: string; recommendation: Recommendation } => Boolean(item));
+  }
 </script>
 
 <svelte:window onkeydown={handleKeydown} />
@@ -68,18 +78,22 @@
   {:else}
     <article class="results" aria-labelledby="results-title">
       <header class="result-header"><p class="eyebrow">Tutor Result</p><h1 id="results-title">Reading Assessment Result</h1></header>
-      <section class="recommendations" aria-labelledby="recommendations-title"><h2 id="recommendations-title">Starting Point</h2>
-        {#if run.completionReason === "all-passed" || !tutorRecommendation}
+      <section class="recommendations" aria-labelledby="recommendations-title"><h2 id="recommendations-title">Recommendations</h2>
+        {#if run.completionReason === "all-passed"}
           <div class="outcome"><h3>No UFLI Foundations Starting Point was identified.</h3>
             <p>The adaptive samples did not identify a Foundations starting point. Review UFLI’s official <a href={fluencyGuideUrl} target="_blank" rel="noreferrer">Supporting the Development of Reading Fluency guide</a>.</p><p class="destination">{fluencyGuideUrl}</p></div>
+        {:else if tutorResultItems.length === 0}
+          <div class="outcome"><h3>Lesson 1</h3><p>No positive lesson evidence was recorded.</p></div>
         {:else}
-            <section class="recommendation"><h3>Lesson {tutorRecommendation.lesson}</h3><p>{tutorRecommendation.concept}</p>
-              {#if tutorRecommendation.resource}
+          {#each tutorResultItems as item}
+            <section class="recommendation"><p class="result-label">{item.label}</p><h3>Lesson {item.recommendation.lesson}</h3><p>{item.recommendation.concept}</p>
+              {#if item.recommendation.resource}
                 <ul class="resources">{#each resourceLabels as [key, label]}<li><strong>{label}:</strong>
-                  {#if tutorRecommendation.resource.resources[key]}<a href={tutorRecommendation.resource.resources[key] ?? undefined} target="_blank" rel="noreferrer">Open official resource</a><span class="destination">{tutorRecommendation.resource.resources[key]}</span>
+                  {#if item.recommendation.resource.resources[key]}<a href={item.recommendation.resource.resources[key] ?? undefined} target="_blank" rel="noreferrer">Open official resource</a><span class="destination">{item.recommendation.resource.resources[key]}</span>
                   {:else}<span>Unavailable</span>{/if}</li>{/each}</ul>
               {:else}<p>Official lesson resources are unavailable in the local manifest.</p>{/if}
             </section>
+          {/each}
         {/if}
       </section>
       <footer class="notes"><p>Created locally to align with UFLI’s scope and sequence. Not created or endorsed by UFLI. This unvalidated result is a tutor-facing suggestion, not a formal placement.</p></footer>
@@ -96,7 +110,7 @@
   .instructions{margin:2rem 0}.instructions p{line-height:1.55;margin:.65rem 0}button{border-radius:.55rem;padding:.8rem 1.05rem;font:inherit;font-weight:700;cursor:pointer}.primary{border:1px solid var(--color-primary-dark);background:var(--color-primary-dark);color:var(--color-paper)}.secondary{border:1px solid var(--color-muted);background:var(--color-paper);color:var(--color-primary-dark)}.fine-print,.notes{font-size:.78rem;line-height:1.5;color:var(--color-muted)}.fine-print{margin:2rem 0 0}
   main.administration{padding:0;background:var(--color-paper);touch-action:pan-y;user-select:none}.word-stage{min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;place-items:center;padding:2rem;box-sizing:border-box}.progress{color:var(--color-muted);font-size:.82rem;letter-spacing:.04em}.word{align-self:center;margin:0;font-size:clamp(4rem,18vw,10rem);font-weight:600;line-height:1;text-align:center;letter-spacing:.01em}
   .results{width:min(100%,58rem);margin-top:1rem}.result-header{border-bottom:1px solid var(--color-muted);margin-bottom:2rem;padding-bottom:1.5rem}
-  .recommendations{margin-bottom:2.5rem}.recommendation,.outcome{border:1px solid var(--color-muted);border-left:4px solid var(--color-ink);border-radius:.5rem;padding:1.15rem;margin:1rem 0}.recommendation p{margin-bottom:.75rem}.resources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem 1.25rem;padding:0;list-style:none;margin:0}.resources li{font-size:.87rem}.resources strong{display:block}.resources a,a{color:var(--color-accent);text-underline-offset:.18em}.destination{display:none;overflow-wrap:anywhere}
+  .recommendations{margin-bottom:2.5rem}.recommendation,.outcome{border:1px solid var(--color-muted);border-left:4px solid var(--color-ink);border-radius:.5rem;padding:1.15rem;margin:1rem 0}.recommendation p{margin-bottom:.75rem}.result-label{color:var(--color-muted);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.resources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem 1.25rem;padding:0;list-style:none;margin:0}.resources li{font-size:.87rem}.resources strong{display:block}.resources a,a{color:var(--color-accent);text-underline-offset:.18em}.destination{display:none;overflow-wrap:anywhere}
   .notes{border-top:1px solid var(--color-muted);margin-top:2.5rem;padding-top:1.25rem}.actions{display:flex;justify-content:flex-start;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap}.copy-status{font-size:.85rem;margin-top:.75rem}
   @media (max-width:35rem){.resources{grid-template-columns:1fr}}
   @media print{@page{size:auto;margin:.55in}:global(body){background:#fff;color:#000;font-family:Arial,sans-serif}main{padding:0;min-height:0}.results{width:100%;margin:0;padding:0;border:0;border-radius:0;box-shadow:none}.no-print{display:none!important}.result-header{margin-bottom:.2in;padding-bottom:.15in}.recommendations{margin-bottom:.25in}.recommendation,.outcome{padding:.12in;margin:.1in 0;border-color:#777}h1{font-size:24pt}h2{font-size:16pt}h3{font-size:11pt;margin-bottom:.05in}p{margin-bottom:.06in}.resources{gap:.06in .2in}.resources li{font-size:8.5pt}.destination{display:block;font-size:7pt;line-height:1.2;margin-top:.02in}.notes{font-size:7.5pt;margin-top:.2in;padding-top:.1in}}

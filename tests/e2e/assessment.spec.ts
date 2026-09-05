@@ -20,6 +20,7 @@ test("tutor completes an early-stopped Assessment Run without student feedback",
   await page.keyboard.press("ArrowLeft");
   await page.keyboard.press("ArrowLeft");
   await expect(page.getByRole("heading", { name: "Lesson 1" })).toBeVisible();
+  await expect(page.getByText("First observed gap", { exact: true })).toBeVisible();
   await expect(page.getByText("Home Practice:")).toBeVisible();
   await expect(page.getByText("Unavailable").first()).toBeVisible();
   await expect(page.getByText("Student", { exact: true })).toHaveCount(0);

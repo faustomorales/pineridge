@@ -9,7 +9,7 @@ import {
   transitionAssessment,
   type AssessmentRun,
 } from "./engine";
-import { buildEvidenceRecommendation, buildRecommendations, lessonOrder } from "./results";
+import { buildEvidenceRecommendation, buildEvidenceSummary, buildRecommendations, lessonOrder } from "./results";
 
 interface StudentProfile {
   gapLessons: string[];
@@ -188,5 +188,13 @@ it("does not infer Lesson 42 from an entirely incorrect digraph probe", () => {
       ufliResourceManifest.lessons,
     )?.lesson,
   ).toBe("9");
+  const summary = buildEvidenceSummary(
+    run.responses,
+    run.demonstratedGaps,
+    assessmentContent.bands,
+    ufliResourceManifest.lessons,
+  );
+  expect(summary.demonstrated?.lesson).toBe("9");
+  expect(summary.firstGap?.lesson).toBe("42");
   expect(run.responses).toHaveLength(13);
 });
