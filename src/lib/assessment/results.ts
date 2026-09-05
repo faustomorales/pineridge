@@ -106,20 +106,21 @@ export function buildEvidenceRecommendation(
   const supportedLessons = new Set(
     responses
       .filter((response) => response.correct)
-      .flatMap((response) => response.word.lessons),
+      .flatMap((response) => response.word.evidenceFor),
   );
-  const firstUnsupportedProbe = bands
-    .slice(focusedBandIndex)
-    .flatMap((band) => band.probes)
-    .find((probe) => !supportedLessons.has(probe.lesson));
-  if (!firstUnsupportedProbe) return null;
+  const focusedBand = bands[focusedBandIndex];
+  const supportedProbe = [...focusedBand.probes]
+    .reverse()
+    .find((probe) => supportedLessons.has(probe.lesson));
+  const placementLesson = supportedProbe?.lesson ?? focusedBand.probes[0]?.lesson;
+  if (!placementLesson) return null;
 
   const resource = lessons.find(
-    (item) => item.lesson === firstUnsupportedProbe.lesson,
+    (item) => item.lesson === placementLesson,
   ) ?? null;
   return {
-    lesson: firstUnsupportedProbe.lesson,
-    concept: firstUnsupportedProbe.concept,
+    lesson: placementLesson,
+    concept: supportedProbe?.concept ?? resource?.concept ?? "Starting lesson",
     kind: "concept",
     isStartingPoint: true,
     resource,

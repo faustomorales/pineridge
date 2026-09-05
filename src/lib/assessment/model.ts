@@ -4,7 +4,8 @@ export interface AssessmentWord {
   readonly id: string;
   readonly text: string;
   readonly kind: WordKind;
-  readonly lessons: readonly string[];
+  readonly requirements: readonly string[];
+  readonly evidenceFor: readonly string[];
 }
 
 export type FiveWords = readonly [

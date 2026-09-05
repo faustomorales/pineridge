@@ -6,6 +6,6 @@ Accepted
 
 ## Decision
 
-Associate every assessment word with the lessons needed to read it. Within the earliest skill band that receives focused probing, choose the first lesson not supported by at least one correct associated word; treat earlier adaptively passed bands as broadly demonstrated.
+Give every assessment word two mappings: the lessons or components required to decode it, and the instructional lesson for which a correct response supplies placement evidence. Within the earliest skill band that receives focused probing, choose the highest lesson supported by at least one correct mapped word; treat earlier adaptively passed bands as broadly demonstrated.
 
-This lets correct responses outweigh misses on words containing unfamiliar later patterns while preserving midpoint jumps for advanced readers. Demonstrated Gaps remain stopping evidence, not the source of the Starting Point.
+This represents non-letter concepts such as Lesson 5 blending without confusing them with letter requirements, lets correct responses outweigh unrelated misses, and preserves midpoint jumps for advanced readers. Demonstrated Gaps remain stopping evidence, not the source of the Starting Point.

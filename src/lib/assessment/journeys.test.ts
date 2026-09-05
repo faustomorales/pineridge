@@ -140,3 +140,27 @@ it("places a student who reads only m, a, s, and t words at Lesson 5", () => {
   expect(recommendation?.lesson).toBe("5");
   expect(run.responses.length).toBeLessThanOrEqual(15);
 });
+
+it("places a student who also reads p words at Lesson 6", () => {
+  const knownLetters = new Set(["m", "a", "s", "t", "p"]);
+  let run = transitionAssessment(createAssessmentRun(assessmentContent), {
+    type: "confirm",
+  });
+
+  while (run.status === "active") {
+    const word = currentWord(run)!;
+    const correct = [...word.text.toLocaleLowerCase()].every((letter) =>
+      knownLetters.has(letter),
+    );
+    run = transitionAssessment(run, { type: "judge", correct });
+  }
+
+  expect(
+    buildEvidenceRecommendation(
+      run.responses,
+      assessmentContent.bands,
+      ufliResourceManifest.lessons,
+    )?.lesson,
+  ).toBe("6");
+  expect(run.responses.length).toBeLessThanOrEqual(15);
+});

@@ -21,9 +21,11 @@ describe("assessment content", () => {
       for (const group of band.checkpointGroups) {
         expect(group).toHaveLength(5);
         for (const word of group) {
-          expect(word.lessons.length).toBeGreaterThan(0);
-          expect(new Set(word.lessons).size).toBe(word.lessons.length);
-          expect(word.lessons.every((lesson) => manifestLessons.has(lesson))).toBe(true);
+          expect(word.requirements.length).toBeGreaterThan(0);
+          expect(word.evidenceFor.length).toBeGreaterThan(0);
+          expect(new Set(word.requirements).size).toBe(word.requirements.length);
+          expect(word.requirements.every((lesson) => manifestLessons.has(lesson))).toBe(true);
+          expect(word.evidenceFor.every((lesson) => manifestLessons.has(lesson))).toBe(true);
           expect(wordIds.has(word.id)).toBe(false);
           wordIds.add(word.id);
         }
@@ -41,9 +43,10 @@ describe("assessment content", () => {
           probe.words.filter((word) => word.kind === "invented"),
         ).toHaveLength(2);
         for (const word of probe.words) {
-          expect(word.lessons).toContain(probe.lesson);
-          expect(new Set(word.lessons).size).toBe(word.lessons.length);
-          expect(word.lessons.every((lesson) => manifestLessons.has(lesson))).toBe(true);
+          expect(word.evidenceFor).toContain(probe.lesson);
+          expect(new Set(word.requirements).size).toBe(word.requirements.length);
+          expect(word.requirements.every((lesson) => manifestLessons.has(lesson))).toBe(true);
+          expect(word.evidenceFor.every((lesson) => manifestLessons.has(lesson))).toBe(true);
           expect(wordIds.has(word.id)).toBe(false);
           wordIds.add(word.id);
         }
@@ -56,7 +59,8 @@ describe("assessment content", () => {
       (word) => word.text === "map",
     );
     expect(map).toBeDefined();
-    expect(map?.lessons).toEqual(["2", "1", "6"]);
+    expect(map?.requirements).toEqual(["2", "1", "6"]);
+    expect(map?.evidenceFor).toEqual(["6"]);
   });
 
   it("presents Concept Probes in instructional lesson order", () => {

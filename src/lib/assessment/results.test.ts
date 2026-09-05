@@ -21,20 +21,45 @@ describe("Tutor Result recommendations", () => {
         bandId: band.id,
         stage: "focus" as const,
         groupId: "lesson-1",
-        word: { id: "am", text: "am", kind: "real" as const, lessons: ["1", "2"] },
+        word: { id: "am", text: "am", kind: "real" as const, requirements: ["1", "2"], evidenceFor: ["5"] },
       },
       {
         correct: true,
         bandId: band.id,
         stage: "focus" as const,
         groupId: "lesson-3",
-        word: { id: "sat", text: "sat", kind: "real" as const, lessons: ["1", "2", "3", "4"] },
+        word: { id: "sat", text: "sat", kind: "real" as const, requirements: ["1", "2", "3", "4"], evidenceFor: ["5"] },
       },
     ];
 
     expect(
       buildEvidenceRecommendation(responses, [band], ufliResourceManifest.lessons),
     ).toMatchObject({ lesson: "5", isStartingPoint: true });
+  });
+
+  it("chooses Lesson 6 when a correct word provides p-level evidence", () => {
+    const band = assessmentContent.bands[0];
+    const map = band.checkpointGroups[0].find((word) => word.text === "map")!;
+    const responses = [
+      {
+        correct: true,
+        bandId: band.id,
+        stage: "checkpoint" as const,
+        groupId: `${band.id}-0`,
+        word: map,
+      },
+      {
+        correct: false,
+        bandId: band.id,
+        stage: "focus" as const,
+        groupId: "lesson-1",
+        word: band.probes[0].words[0],
+      },
+    ];
+
+    expect(
+      buildEvidenceRecommendation(responses, [band], ufliResourceManifest.lessons),
+    ).toMatchObject({ lesson: "6", isStartingPoint: true });
   });
 
   it("stars the earliest concept and adds a review when gaps span its concepts", () => {

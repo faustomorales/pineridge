@@ -13,7 +13,8 @@ const words = (prefix: string) =>
     id: `${prefix}-${index + 1}`,
     text: `${prefix}${index + 1}`,
     kind: index < 3 ? ("real" as const) : ("invented" as const),
-    lessons: ["1"],
+    requirements: ["1"],
+    evidenceFor: ["1"],
   })) as unknown as FiveWords;
 
 const definition: AssessmentDefinition = {

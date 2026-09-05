@@ -28,7 +28,7 @@ const graphemes = Object.keys(graphemeLessons).sort(
   (left, right) => right.length - left.length,
 );
 
-const lessonsForText = (text: string, targetLesson?: string): string[] => {
+const requirementsForText = (text: string): string[] => {
   const lessons: string[] = [];
   const normalized = text.toLocaleLowerCase();
   let index = 0;
@@ -42,12 +42,22 @@ const lessonsForText = (text: string, targetLesson?: string): string[] => {
     if (!lessons.includes(lesson)) lessons.push(lesson);
     index += grapheme.length;
   }
-  if (targetLesson && !lessons.includes(targetLesson)) lessons.push(targetLesson);
   return lessons;
 };
 
+const placementEvidenceForText = (text: string): string[] => {
+  const requirements = requirementsForText(text);
+  const numericRequirements = requirements.map((lesson) => Number.parseFloat(lesson));
+  if (text.length >= 2 && numericRequirements.every((lesson) => lesson <= 4)) {
+    return ["5"];
+  }
+  return [requirements.reduce((latest, lesson) =>
+    Number.parseFloat(lesson) > Number.parseFloat(latest) ? lesson : latest,
+  )];
+};
+
 const group = (id: string, texts: FiveTexts): FiveWords =>
-  texts.map((text, index) => ({ id: `${id}-${index + 1}`, text, kind: "real", lessons: lessonsForText(text) })) as unknown as FiveWords;
+  texts.map((text, index) => ({ id: `${id}-${index + 1}`, text, kind: "real", requirements: requirementsForText(text), evidenceFor: placementEvidenceForText(text) })) as unknown as FiveWords;
 
 const probe = (
   id: string,
@@ -60,8 +70,8 @@ const probe = (
   lesson,
   concept,
   words: [
-    ...real.map((text, index) => ({ id: `${id}-r${index + 1}`, text, kind: "real" as const, lessons: lessonsForText(text, lesson) })),
-    ...invented.map((text, index) => ({ id: `${id}-i${index + 1}`, text, kind: "invented" as const, lessons: lessonsForText(text, lesson) })),
+    ...real.map((text, index) => ({ id: `${id}-r${index + 1}`, text, kind: "real" as const, requirements: requirementsForText(text), evidenceFor: [lesson] })),
+    ...invented.map((text, index) => ({ id: `${id}-i${index + 1}`, text, kind: "invented" as const, requirements: requirementsForText(text), evidenceFor: [lesson] })),
   ] as unknown as FiveWords,
 });
 
