@@ -34,15 +34,15 @@ describe("Tutor Result recommendations", () => {
       {
         correct: true,
         bandId: band.id,
-        stage: "focus" as const,
-        groupId: "lesson-1",
+        stage: "checkpoint" as const,
+        groupId: `${band.id}-0`,
         word: { id: "am", text: "am", kind: "real" as const, requirements: ["1", "2"], evidenceFor: ["5"] },
       },
       {
         correct: true,
         bandId: band.id,
-        stage: "focus" as const,
-        groupId: "lesson-3",
+        stage: "checkpoint" as const,
+        groupId: `${band.id}-0`,
         word: { id: "sat", text: "sat", kind: "real" as const, requirements: ["1", "2", "3", "4"], evidenceFor: ["5"] },
       },
     ];
