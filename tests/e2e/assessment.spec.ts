@@ -21,8 +21,8 @@ test("tutor completes an early-stopped Assessment Run without student feedback",
   await page.keyboard.press("ArrowLeft");
   await expect(page.getByRole("heading", { name: "Lesson 1" })).toBeVisible();
   await expect(page.getByText("First observed gap", { exact: true })).toBeVisible();
-  await expect(page.getByText("Home Practice:")).toBeVisible();
-  await expect(page.getByText("Unavailable").first()).toBeVisible();
+  await expect(page.getByLabel("Home Practice unavailable")).toBeVisible();
+  await expect(page.getByRole("link", { name: "View in UFLI Toolbox" })).toHaveAttribute("href", /foundations\/toolbox\/1-34\/?$/);
   await expect(page.getByText("Student", { exact: true })).toHaveCount(0);
   await expect(page.getByText("Date", { exact: true })).toHaveCount(0);
 
@@ -32,7 +32,7 @@ test("tutor completes an early-stopped Assessment Run without student feedback",
 
   await page.getByRole("button", { name: "Show reasoning" }).click();
   await expect(page.getByRole("heading", { name: "How the recommendations were reached" })).toBeVisible();
-  await expect(page.getByText("Broad checkpoint", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText(/Broad checkpoint · Lesson evidence/).first()).toBeVisible();
   await expect(page.getByText("Focused probe · Lesson 1", { exact: true })).toBeVisible();
   await expect(page.getByText("First nearby observed gap: Lesson 1", { exact: true })).toBeVisible();
   await expect(page.getByText("amincorrect", { exact: true })).toBeVisible();

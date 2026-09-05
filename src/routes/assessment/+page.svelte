@@ -101,6 +101,11 @@
         ? "Probe showed a gap; the search narrowed toward the frontier."
         : "Probe supplied partial evidence.";
   }
+  function stepLessons(step: (typeof reasoningSteps)[number]) {
+    return [...new Set(step.responses.flatMap((response) => response.word.evidenceFor))]
+      .sort((left, right) => Number.parseFloat(left) - Number.parseFloat(right))
+      .join(", ");
+  }
 </script>
 
 <svelte:window onkeydown={handleKeydown} />
@@ -136,9 +141,13 @@
           {#each tutorResultItems as item}
             <section class="recommendation"><p class="result-label">{item.label}</p><h3>Lesson {item.recommendation.lesson}</h3><p>{item.recommendation.concept}</p>
               {#if item.recommendation.resource}
-                <ul class="resources">{#each resourceLabels as [key, label]}<li><strong>{label}:</strong>
-                  {#if item.recommendation.resource.resources[key]}<a href={item.recommendation.resource.resources[key] ?? undefined} target="_blank" rel="noreferrer">Open official resource</a><span class="destination">{item.recommendation.resource.resources[key]}</span>
-                  {:else}<span>Unavailable</span>{/if}</li>{/each}</ul>
+                <div class="resources" aria-label={`Official resources for Lesson ${item.recommendation.lesson}`}>
+                  {#each resourceLabels as [key, label]}
+                    {#if item.recommendation.resource.resources[key]}<a class="resource-chip" href={item.recommendation.resource.resources[key] ?? undefined} target="_blank" rel="noreferrer">{label}</a><span class="destination">{label}: {item.recommendation.resource.resources[key]}</span>
+                    {:else}<span class="resource-chip unavailable" aria-label={`${label} unavailable`} aria-disabled="true" title="Unavailable for this lesson">{label}</span>{/if}
+                  {/each}
+                  <a class="resource-chip toolbox" href={item.recommendation.resource.sourceUrl} target="_blank" rel="noreferrer">View in UFLI Toolbox</a><span class="destination">UFLI Toolbox: {item.recommendation.resource.sourceUrl}</span>
+                </div>
               {:else}<p>Official lesson resources are unavailable in the local manifest.</p>{/if}
             </section>
           {/each}
@@ -152,7 +161,7 @@
               <li class="reasoning-step">
                 <div class="step-marker" aria-hidden="true">{index + 1}</div>
                 <div class="step-card">
-                  <p class="step-type">{step.stage === "checkpoint" ? "Broad checkpoint" : `Focused probe · Lesson ${step.lesson}`}</p>
+                  <p class="step-type">{step.stage === "checkpoint" ? `Broad checkpoint · Lesson evidence ${stepLessons(step)}` : `Focused probe · Lesson ${step.lesson}`}</p>
                   <h3>{step.stage === "checkpoint" ? step.bandLabel : step.concept}</h3>
                   <div class="word-evidence" aria-label="Tutor judgments">
                     {#each step.responses as response}<span class:correct={response.correct} class:incorrect={!response.correct}>{response.word.text}<small>{response.correct ? "correct" : "incorrect"}</small></span>{/each}
@@ -185,9 +194,9 @@
   .instructions{margin:2rem 0}.instructions p{line-height:1.55;margin:.65rem 0}button{border-radius:.55rem;padding:.8rem 1.05rem;font:inherit;font-weight:700;cursor:pointer}.primary{border:1px solid var(--color-primary-dark);background:var(--color-primary-dark);color:var(--color-paper)}.secondary{border:1px solid var(--color-muted);background:var(--color-paper);color:var(--color-primary-dark)}.fine-print,.notes{font-size:.78rem;line-height:1.5;color:var(--color-muted)}.fine-print{margin:2rem 0 0}
   main.administration{padding:0;background:var(--color-paper);touch-action:pan-y;user-select:none}.word-stage{min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;place-items:center;padding:2rem;box-sizing:border-box}.progress{color:var(--color-muted);font-size:.82rem;letter-spacing:.04em}.word{align-self:center;margin:0;font-size:clamp(4rem,18vw,10rem);font-weight:600;line-height:1;text-align:center;letter-spacing:.01em}
   .results{width:min(100%,58rem);margin-top:1rem}.result-header{border-bottom:1px solid var(--color-muted);margin-bottom:2rem;padding-bottom:1.5rem}
-  .recommendations{margin-bottom:2.5rem}.recommendation,.outcome{border:1px solid var(--color-muted);border-left:4px solid var(--color-ink);border-radius:.5rem;padding:1.15rem;margin:1rem 0}.recommendation p{margin-bottom:.75rem}.result-label{color:var(--color-muted);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.resources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem 1.25rem;padding:0;list-style:none;margin:0}.resources li{font-size:.87rem}.resources strong{display:block}.resources a,a{color:var(--color-accent);text-underline-offset:.18em}.destination{display:none;overflow-wrap:anywhere}
+  .recommendations{margin-bottom:2.5rem}.recommendation,.outcome{border:1px solid var(--color-muted);border-left:4px solid var(--color-ink);border-radius:.5rem;padding:1.15rem;margin:1rem 0}.recommendation p{margin-bottom:.75rem}.result-label{color:var(--color-muted);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.resources{display:flex;align-items:center;flex-wrap:wrap;gap:.55rem;margin-top:.9rem}.resource-chip{display:inline-flex;align-items:center;min-height:2rem;box-sizing:border-box;border:1px solid var(--color-muted);border-radius:99rem;padding:.35rem .75rem;background:var(--color-paper);font-size:.78rem;font-weight:750;line-height:1.15;color:var(--color-accent);text-decoration:none}.resource-chip[href]:hover{border-color:var(--color-accent);text-decoration:underline}.resource-chip.unavailable{background:var(--color-primary-light);border-color:transparent;color:var(--color-muted);opacity:.62}.resource-chip.toolbox{border-color:var(--color-accent)}a{color:var(--color-accent);text-underline-offset:.18em}.destination{display:none;overflow-wrap:anywhere}
   .reasoning{border-top:1px solid var(--color-muted);padding-top:2rem;margin-top:2.5rem}.results .reasoning.no-print{max-width:none;margin-right:0;margin-left:0;text-align:left}.reasoning-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(14rem,22rem);gap:2rem;align-items:start}.reasoning-heading h2{margin-bottom:0}.reasoning-heading>p{font-size:.88rem;line-height:1.5;color:var(--color-muted)}.reasoning-path{list-style:none;margin:1.75rem 0 0;padding:0}.reasoning-step{display:grid;grid-template-columns:2.25rem minmax(0,1fr);gap:.85rem;position:relative;padding-bottom:1rem}.reasoning-step:not(:last-child)::before{content:"";position:absolute;left:1.1rem;top:2.1rem;bottom:-.1rem;width:2px;background:var(--color-muted)}.step-marker{position:relative;z-index:1;width:2.25rem;height:2.25rem;border-radius:50%;display:grid;place-items:center;background:var(--color-primary-dark);color:var(--color-paper);font-size:.78rem;font-weight:800}.step-card{border:1px solid var(--color-muted);border-radius:.65rem;padding:1rem;background:color-mix(in srgb,var(--color-paper) 92%,var(--color-primary-light))}.step-card h3{margin-bottom:.75rem}.step-type{margin-bottom:.3rem;color:var(--color-muted);font-size:.72rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.word-evidence{display:flex;flex-wrap:wrap;gap:.5rem}.word-evidence span{display:inline-grid;grid-template-columns:auto auto;align-items:baseline;gap:.4rem;border-radius:99rem;padding:.35rem .65rem;font-weight:750}.word-evidence small{font-size:.62rem;font-weight:650}.word-evidence .correct{background:#dcebdd;color:#244c2c}.word-evidence .incorrect{background:#f1dfda;color:#713729}.step-outcome{margin:.8rem 0 0;font-size:.84rem;line-height:1.4;color:var(--color-muted)}.result-step .step-marker{background:var(--color-accent)}.result-step .step-card{border-color:var(--color-accent)}.result-step .step-card p:last-child{margin-bottom:0}
   .notes{border-top:1px solid var(--color-muted);margin-top:2.5rem;padding-top:1.25rem}.results .actions.no-print{display:flex;justify-content:flex-start;gap:.75rem;max-width:none;margin:1.5rem 0 0;padding:0;text-align:left;flex-wrap:wrap}.actions button{margin:0}.copy-status{font-size:.85rem;margin-top:.75rem}
-  @media (max-width:35rem){.resources,.reasoning-heading{grid-template-columns:1fr}.reasoning-heading{gap:.25rem}.actions{flex-direction:column;align-items:flex-start}.actions button{width:auto}}
-  @media print{@page{size:auto;margin:.55in}:global(body){background:#fff;color:#000;font-family:Arial,sans-serif}main{padding:0;min-height:0}.results{width:100%;margin:0;padding:0;border:0;border-radius:0;box-shadow:none}.no-print{display:none!important}.result-header{margin-bottom:.2in;padding-bottom:.15in}.recommendations{margin-bottom:.25in}.recommendation,.outcome{padding:.12in;margin:.1in 0;border-color:#777}h1{font-size:24pt}h2{font-size:16pt}h3{font-size:11pt;margin-bottom:.05in}p{margin-bottom:.06in}.resources{gap:.06in .2in}.resources li{font-size:8.5pt}.destination{display:block;font-size:7pt;line-height:1.2;margin-top:.02in}.notes{font-size:7.5pt;margin-top:.2in;padding-top:.1in}}
+  @media (max-width:35rem){.reasoning-heading{grid-template-columns:1fr}.reasoning-heading{gap:.25rem}.actions{flex-direction:column;align-items:flex-start}.actions button{width:auto}}
+  @media print{@page{size:auto;margin:.55in}:global(body){background:#fff;color:#000;font-family:Arial,sans-serif}main{padding:0;min-height:0}.results{width:100%;margin:0;padding:0;border:0;border-radius:0;box-shadow:none}.no-print{display:none!important}.result-header{margin-bottom:.2in;padding-bottom:.15in}.recommendations{margin-bottom:.25in}.recommendation,.outcome{padding:.12in;margin:.1in 0;border-color:#777}h1{font-size:24pt}h2{font-size:16pt}h3{font-size:11pt;margin-bottom:.05in}p{margin-bottom:.06in}.resources{gap:.06in}.resource-chip{font-size:8.5pt;min-height:0;padding:.04in .08in}.destination{display:block;font-size:7pt;line-height:1.2;margin-top:.02in}.notes{font-size:7.5pt;margin-top:.2in;padding-top:.1in}}
 </style>
