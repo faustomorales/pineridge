@@ -11,7 +11,7 @@
     <main class="sheet" aria-label="Twenty-five student award stickers; theme columns are flowers, animals, sports, space, and ocean">
       {#each stars as star}
         {#each themes as theme}
-          <img src={`/stickers/${theme}/${star.id}.png?v=lfs-images`} alt={`${star.label} star, ${theme} theme`} />
+          <img src={`/stickers/${theme}/${star.id}.png?v=star-shapes-2`} alt={`${star.label} star, ${theme} theme`} />
         {/each}
       {/each}
     </main>
@@ -21,7 +21,7 @@
 <style>
   :global(:root) { --sheet-width: 8.5in; --sheet-height: 11in; --preview-scale: .7; }
   .sticker-page :global(.sheet) { padding: .35in; background: white; display: grid; grid-template-columns: repeat(5, 1.48in); grid-template-rows: repeat(5, 1.48in); gap: .3in .1in; align-content: center; justify-content: center; }
-  .sheet img { width: 1.48in; height: 1.48in; object-fit: contain; }
+  .sheet img { width: 1.258in; height: 1.258in; object-fit: contain; place-self: center; }
   .no-print p { margin: .75rem 0; line-height: 1.5; }
   .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin: 1rem 0; }
   @media (max-width: 620px) { :global(:root) { --preview-scale: .42; } }
